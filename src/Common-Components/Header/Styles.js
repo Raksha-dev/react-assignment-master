@@ -398,7 +398,8 @@ export const HeaderSearch = styled.div `
   background-color: transparent !important;
   border: none;
 }
-& i {
+& div {
+    cursor: pointer;
     margin-top: -43px;
     padding: 11px;
     float: right;

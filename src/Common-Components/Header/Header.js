@@ -51,7 +51,8 @@ class header extends Component {
     openresponsivemenu: false,
     dropdownhover: false,
     showIcon: false,
-    showSearch: false
+    showSearch: false,
+    closeSearch: false
   };
   handleDropdownClick = () => {
     this.setState((state) => {
@@ -75,6 +76,14 @@ class header extends Component {
       }
     })
     console.log("hey")
+  }
+  closeSearch = () => {
+    this.setState((state) => {
+      return {
+        closeSearch: !state.closeSearch
+      }
+    })
+    console.log("bye")
   }
   toggle() {
     this.setState((prevState) => ({
@@ -263,10 +272,10 @@ class header extends Component {
               </NavMenu>
             </Navigation >
             <HeaderSearch style={{display: this.state.showSearch ? 'block' : 'none' }}> 
-            <input placeholder="to search type and hit enter" />
-            <i onClick={this.handleSearch} style={{display: this.state.showSearch ? 'block' : 'none' }}>
+            <input placeholder="to search type and hit enter"  onClick={this.closeSearch} />
+            <div >
             <AiOutlineCloseCircle />
-            </i>
+            </div>
             </HeaderSearch>
             <Responsivemenu onClick={this.handleReasponsiveDropdownClick}>
               <i > 
