@@ -30,12 +30,12 @@ import {
 } from "./Style";
 class view extends Component {
   render() {
-    // const styles = {
-    //   overlay: {
-    //     ...StyleSheet.absoluteFillObject,
-    //     backgroundColor: "rgba(0,0,0,0.5)",
-    //   },
-    // };
+    const styles = {
+      overlay: {
+        ...StyleSheet.absoluteFillObject,
+        backgroundColor: "rgba(0,0,0,0.5)",
+      },
+    };
     return (
       <>
       
