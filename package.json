@@ -1,0 +1,58 @@
+{
+  "name": "reac-assignment",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@iconscout/react-unicons": "^1.1.5",
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "axios": "^0.20.0",
+    "firebase": "^7.24.0",
+    "font-awesome": "^4.7.0",
+    "react": "^16.14.0",
+    "react-css-dropdown": "^1.1.2",
+    "react-dom": "^16.14.0",
+    "react-elastic-carousel": "^0.9.0",
+    "react-icons": "^3.11.0",
+    "react-owl-carousel": "^2.3.0",
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.4",
+    "react-slick": "^0.27.12",
+    "react-spinners": "^0.9.0",
+    "reactstrap": "^8.6.0",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
+    "simple-line-icons": "^2.5.5",
+    "styled-components": "^5.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
+}

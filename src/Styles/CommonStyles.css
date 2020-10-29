@@ -1,0 +1,16 @@
+.wrapper{
+    background-color: #fff;
+}
+strong {
+    font-weight: bold;
+    color: white;
+
+}
+h3 {
+    margin: 58px 0px 48px;
+    font-size: 28px;
+    text-align: center;
+    font-family: Montserrat, HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
