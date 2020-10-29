@@ -39,7 +39,6 @@ class view extends Component {
     return (
       <>
       
-      <MainContainer>
       <Header />
         <Image style={StyleSheet.absoluteFillObject} resizeMode="cover">
           <div className="bg-color"></div>
@@ -137,7 +136,6 @@ class view extends Component {
         </Imageeddgebottom>
         
         <Footer />
-      </MainContainer>
       </>
     );
   }

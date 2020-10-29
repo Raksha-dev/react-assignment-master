@@ -32,14 +32,14 @@ const Contact = () => {
         <form className="form" onSubmit={handleSubmit}> 
             <h2>Contact form</h2>
             <Inputform>
-            <input placeholder="name" required="true" value={name} onChange={(e) => setname(e.target.value)} />
-            <input placeholder="email" required="true" value={email} onChange={(e) => setemail(e.target.value)} />
+            <input placeholder="name" required={true} value={name} onChange={(e) => setname(e.target.value)} />
+            <input placeholder="email" required={true} value={email} onChange={(e) => setemail(e.target.value)} />
             </Inputform>
             <Inputform>
-            <textarea placeholder="subject" required="true" value={subject} onChange={(e) => setsubject(e.target.value)} />
+            <textarea placeholder="subject" required={true} value={subject} onChange={(e) => setsubject(e.target.value)} />
             </Inputform>
             <Inputform>
-            <textarea placeholder="Message" required="true" value={message} onChange={(e) => setmessage(e.target.value)} />
+            <textarea placeholder="Message" required={true} value={message} onChange={(e) => setmessage(e.target.value)} />
             </Inputform>
 
             <button type="submit">Submit</button>

@@ -8,13 +8,7 @@ export const Image = styled.div`
   width: 100%;
   height: 100vh;
   background-size: cover;
-  &::after{
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-  }`
+  `
     /* background-color: rgb(48, 49, 51);
     opacity: 0.9; */
         /* content: "";

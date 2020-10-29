@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import '../../Styles/CommonStyles.css';
+import {withRouter} from 'react-router';
 // import './App.css';
 import Header from '../../Common-Components/Header/Header'
 import Footer from '../../Common-Components/Footer/Footer'
@@ -42,4 +43,4 @@ import Dropdown from '../../Common-Components/Dropdown/dropdown'
  }
      
 
-export default Home;
+export default withRouter(Home);
