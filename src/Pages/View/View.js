@@ -30,17 +30,20 @@ import {
 } from "./Style";
 class view extends Component {
   render() {
-    const styles = {
-      overlay: {
-        ...StyleSheet.absoluteFillObject,
-        backgroundColor: "rgba(0,0,0,0.5)",
-      },
-    };
+    // const styles = {
+    //   overlay: {
+    //     ...StyleSheet.absoluteFillObject,
+    //     backgroundColor: "rgba(0,0,0,0.5)",
+    //   },
+    // };
     return (
+      <>
+      
       <MainContainer>
+      <Header />
         <Image style={StyleSheet.absoluteFillObject} resizeMode="cover">
           <div className="bg-color"></div>
-          <Header />
+         
           <Imagebg>
             <h2>Single Project Full-Screen</h2>
           </Imagebg>
@@ -126,7 +129,7 @@ class view extends Component {
               </EnvironmentaliconsContentone>
               <EnvironmentaliconsContentwo>
               <i><RiUserSearchLine /> </i>
-              <h4>Audit & Assurance</h4>
+              <h4>Audit and Assurance</h4>
                 <p>Nunc ultricies porttitor est, ut rutrum ante. Vivamus interdum sodales sem. In ultrices augue eget.</p>
               </EnvironmentaliconsContentwo>
             </Environmentalicons>
@@ -135,6 +138,7 @@ class view extends Component {
         
         <Footer />
       </MainContainer>
+      </>
     );
   }
 }

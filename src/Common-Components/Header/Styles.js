@@ -70,6 +70,22 @@ export const Option = styled.ul`
     color: white;
   }
 `;
+export const ResponsiveOption = styled.ul`
+margin-top: -20px;
+  position: absolute;
+  background-color: black;
+  position: absolute;
+  margin: 1px 0 0 0;
+  z-index: 1001;
+  transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+  transform: translate3d(0, 15px, 0);
+  background: #262626;
+  max-width: 159px;
+  padding: 14px 0;
+  & :hover {
+    color: white;
+  }
+`;
 export const TopbarDropdown = styled.div`
   cursor: pointer;
 `

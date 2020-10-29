@@ -5,6 +5,8 @@ import { FiSearch } from "react-icons/fi";
 import { BiCart } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import firebase from '../../Pages/Contact-us/firebase'
+import { GrFormClose } from "react-icons/gr";
+
 // import React, { Fragment } from "react";
 import {
   Dropdown,
@@ -13,6 +15,7 @@ import {
   DropdownItem
 } from "reactstrap";
 import {
+  ResponsiveOption,
   ToprResponsive,
   ResponsiveIcons,
   TopBar,
@@ -53,6 +56,7 @@ class header extends Component {
     open: false,
     openresponsivemenu: false,
     dropdownhover: false,
+    showIcon: false
   };
   handleDropdownClick = () => {
     this.setState((state) => {
@@ -68,6 +72,7 @@ class header extends Component {
     this.setState((state) => {
       return {
         openresponsivemenu: !state.openresponsivemenu,
+        showIcon: !state.showIcon
       };
     });
     console.log('hey')
@@ -211,34 +216,6 @@ class header extends Component {
                   <Navmenulist href="#" className="current">
                     PORTFOLIO
                   </Navmenulist>
-                  {this.state.portfoliohover && (
-                    <Subdropdown style={{ listStyleType: "none" }}>
-                      <li>
-                        <a href="#">Main Demo</a>
-                      </li>
-                      <li>
-                        <a href="#">Agency Demo</a>
-                      </li>
-                      <li>
-                        <a href="#">Classic Demo</a>
-                      </li>
-                      <li>
-                        <a href="#">Corporate Demo</a>
-                      </li>
-                      <li>
-                        <a href="#">Resume / CV Demo</a>
-                      </li>
-                      <li>
-                        <a href="#">Shop Demo</a>
-                      </li>
-                      <li>
-                        <a href="#">Photography Demo</a>
-                      </li>
-                      <li>
-                        <a href="#">Magazine / Blog Demo</a>
-                      </li>
-                    </Subdropdown>
-                  )}
                 </li>
                 <li className="dropdown">
                   <Navmenulist href="#" className="current">
@@ -291,20 +268,56 @@ class header extends Component {
           
               </i>
               Menu
-              {this.state.handleReasponsiveDropdownClick && (
-                    <Option style={{ listStyleType: "none" }}>
-                      <li>
-                      </li>
-                      <li>Nice First Link</li>
-                      <li>Second Link With Long Title</li>
-                      <li>Third Link</li>
-                    </Option>
-                  )}
+              {this.state.openresponsivemenu && (
+              <ResponsiveOption style={{ listStyleType: "none" }}>
+                <li>
+                  <Navmenulist href="/Home" className="current">Home</Navmenulist>
+                </li>
+                <li className="dropdown">
+                  <Navmenulist href="#" className="current">
+                    PORTFOLIO
+                  </Navmenulist>
+                </li>
+                <li className="dropdown">
+                  <Navmenulist href="#" className="current">
+                    PAGES
+                  </Navmenulist>
+                </li>
+                <li className="dropdown">
+                  <Navmenulist href="#" className="current">
+                    ELEMENTS
+                  </Navmenulist>
+                </li>
+                <li className="dropdown">
+                  <Navmenulist href="#" className="current">
+                    SHOP
+                  </Navmenulist>
+                </li>
+                <li className="dropdown">
+                  <Navmenulist href="#" className="current">
+                    BLOG
+                  </Navmenulist>
+                </li>
+                <li className="dropdown">
+                  <Navmenulist href="/Contactus" className="current">
+                    <div>CONTACT</div>
+                  </Navmenulist>
+                </li>
+                    </ResponsiveOption>
+                 )}
               <ResponsiveIcons >
-                <FiSearch />
-               
+              <div style={{display: this.state.showIcon ? 'none' : 'block' }}> 
+              <FiSearch />
+                </div>
+                
+                <div style={{display: this.state.showIcon ? 'block' : 'none' }}> 
+                <GrFormClose  />
+                </div>
+              
               </ResponsiveIcons>
+             
             </Responsivemenu>
+            
           </MainHeaderContainer>
         </Subheader>
       </>

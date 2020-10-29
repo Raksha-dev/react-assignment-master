@@ -34,10 +34,11 @@ export const Image = styled.div`
     } */
 
 export const Imagebg = styled.div`
+
   h2 {
     font-size: 70px;
     font-weight: 600;
-    color: #fff;
+    color: black;
     max-width: 700px;
     margin: 0 auto;
     line-height: 95px;
@@ -46,7 +47,11 @@ export const Imagebg = styled.div`
     width: 100%;
     height: 100%;
     top: 0;
+    @media (min-width: 320px) and (max-width: 425px) {
+    font-size: 25px !important;
   }
+  }
+  
 `;
 export const Portfoilocontent = styled.div``;
 export const Projectname = styled.div`
@@ -103,6 +108,9 @@ export const Columntwo = styled.ul`
 `;
 // ********************************************************//
 export const Imageeddge = styled.div`
+@media (min-width: 320px) and (max-width: 375px) {
+  display: none;
+}
   width: 100%;
   background-color: #f8f8f8;
   margin-top: 80px;
@@ -112,6 +120,9 @@ export const Imageeddge = styled.div`
   max-height: 640px;
 `;
 export const Imageeddgebottom = styled.div`
+@media (min-width: 320px) and (max-width: 375px) {
+  display: none;
+}
   width: 100%;
   background-color: #f8f8f8;
   display: flex;

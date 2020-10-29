@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 // import React, { } from "react";
 import Header from "../../Common-Components/Header/Header";
 import Footer from "../../Common-Components/Footer/Footer";
@@ -20,7 +20,8 @@ import { Containertwo } from "./Style";
 import { Inputform } from "./Style";
 import { Messagebox } from "./Style";
 import Contact from './contact';
-const contactus = () => {
+class contactus extends Component {
+  render () {
     return (
       <>
         <Header />
@@ -84,6 +85,7 @@ const contactus = () => {
         <Footer />
       </>
     );
+  }
   }
 
 export default contactus;
