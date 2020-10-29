@@ -20,6 +20,9 @@ export const Userlogin = styled.div`
   margin: 0px auto;
   box-shadow: rgb(225, 225, 225) 5px 5px 20px;
   padding: 20px;
+  @media (min-width: 320px) and (max-width: 425px) {
+    width: 275px;
+  }
   & input {
     outline: none;
     width: 100%;
