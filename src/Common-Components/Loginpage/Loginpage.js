@@ -18,7 +18,7 @@ class login extends Component {
     if (inputText.match(mailformat)) {
       return true;
     } else {
-      alert("You have entered an invalid email address!");
+      alert("Please enter username and password!");
       return false;
     }
   }
