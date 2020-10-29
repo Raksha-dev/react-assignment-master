@@ -387,3 +387,20 @@ export const ToprResponsive = styled.li `
 }
 `
 export const Menu = styled.div ``
+
+export const HeaderSearch = styled.div `
+& input {
+  margin-top: 8px;
+  outline: none;
+  padding: 20px;
+  width: 1240px;
+  text-align: center;
+  background-color: transparent !important;
+  border: none;
+}
+& i {
+    margin-top: -43px;
+    padding: 11px;
+    float: right;
+}
+`

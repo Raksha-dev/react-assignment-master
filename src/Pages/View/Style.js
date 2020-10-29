@@ -19,24 +19,6 @@ export const Image = styled.div`
   } */
   
   `
-    /* background-color: rgb(48, 49, 51);
-    opacity: 0.9; */
-        /* content: "";
-        height:350px;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: block;
-        background-color: #2b2c30;
-        opacity: 0.9;
-        
-        @media (min-width:1000px){
-             height:400px;
-        
-        }
-    } */
-
 export const Imagebg = styled.div`
 
   h2 {

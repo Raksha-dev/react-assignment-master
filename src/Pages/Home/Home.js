@@ -11,7 +11,6 @@ import Project from '../../Common-Components/Projects/Projects';
 import Projectphases from '../../Common-Components/ProjectPhases/ProjectPhases';
 import Creativity from '../../Common-Components/Creativity/Creativity';
 import Logocarousel from '../../Common-Components/LogoCarousel/LogoCarousel';
-import Dropdown from '../../Common-Components/Dropdown/dropdown'
 
  class Home extends Component {
      render() {

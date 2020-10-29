@@ -8,10 +8,8 @@ import { Contactus } from "./Styles";
 import { About } from "./Styles";
 import { Aboutus } from "./Styles";
 import { BottomFooter } from "./Styles";
-import { Button,ResponsiveFooetr } from "./Styles";
+import { Button } from "./Styles";
 import { IoIosArrowForward } from "react-icons/io";
-
-// import { Li } from "./Styles";
 
 class footer extends Component {
   render() {

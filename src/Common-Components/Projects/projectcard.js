@@ -7,14 +7,11 @@ export default class card extends Component {
         data:Img,
         active:1        
     }
-
-
     render() {
         this.state.data = this.props.data
         this.state.active = this.props.active
         if(this.state.active)
             return (
-            
                 <Card>
                     <Image src={this.state.data} className="image" style={{width:'100%'}}></Image>
                     <div className="middle">

@@ -7,7 +7,6 @@ import { FaBoxOpen } from "react-icons/fa";
 import { GiPalmTree } from "react-icons/gi";
 
 import {
-  MainContainer,
   Image,
   Imagebg,
   Portfoilocontent,
@@ -30,19 +29,12 @@ import {
 } from "./Style";
 class view extends Component {
   render() {
-    const styles = {
-      overlay: {
-        ...StyleSheet.absoluteFillObject,
-        backgroundColor: "rgba(0,0,0,0.5)",
-      },
-    };
     return (
       <>
       
       <Header />
         <Image style={StyleSheet.absoluteFillObject} resizeMode="cover">
           <div className="bg-color"></div>
-         
           <Imagebg>
             <h2>Single Project Full-Screen</h2>
           </Imagebg>
@@ -100,20 +92,20 @@ class view extends Component {
             </p>
           </Imageeddgecontent>
           <Imageeddgebg>
-            <img src={Singleproject} />
+            <img src={Singleproject}  alt="imageone" />
           </Imageeddgebg>
         </Imageeddge>
         <Imageeddgebottom>
           <Imageeddgebgbottom>
-            <img src={Singleproject} />
+            <img src={Singleproject} alt="image1" />
           </Imageeddgebgbottom>
           <Imageeddgecontentbottom>
-            <Shipicons>
+            <Shipicons alt="shipicon">
               <ShipiconsContentone>
                 <i><RiShip2Line /> </i>
                 <h4>Visual Identity</h4>
                 <p>Nunc ultricies porttitor est, ut rutrum ante. Vivamus interdum sodales sem. In ultrices augue eget.</p>
-              </ShipiconsContentone>
+              </ShipiconsContentone >
               <ShipiconsContentwo>
                 <i><FaBoxOpen /> </i>
                 <h4>Package Design</h4>

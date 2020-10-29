@@ -1,20 +1,14 @@
 import React, { Component } from "react";
-import history from "../../History/history";
 import Sphenelogo from "../../Assets/Images/logo-2.png";
 import { FiSearch } from "react-icons/fi";
 import { BiCart } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import firebase from '../../Pages/Contact-us/firebase'
 import { GrFormClose } from "react-icons/gr";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 
-// import React, { Fragment } from "react";
 import {
-  Dropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
-} from "reactstrap";
-import {
+  HeaderSearch,
   ResponsiveOption,
   ToprResponsive,
   ResponsiveIcons,
@@ -56,17 +50,15 @@ class header extends Component {
     open: false,
     openresponsivemenu: false,
     dropdownhover: false,
-    showIcon: false
+    showIcon: false,
+    showSearch: false
   };
   handleDropdownClick = () => {
     this.setState((state) => {
       return {
         open: !state.open,
-        
       };
-      
     });
-    
   };
   handleReasponsiveDropdownClick = () => {
     this.setState((state) => {
@@ -75,8 +67,15 @@ class header extends Component {
         showIcon: !state.showIcon
       };
     });
-    console.log('hey')
   };
+  handleSearch = () => {
+    this.setState((state) => {
+      return {
+        showSearch: !state.showSearch
+      }
+    })
+    console.log("hey")
+  }
   toggle() {
     this.setState((prevState) => ({
       dropdownhover: !prevState.dropdownhover,
@@ -169,12 +168,12 @@ class header extends Component {
         {/* ****************************************MAIN HEADER************************ */}
         <Subheader>
           <MainHeaderContainer>
-            <MainHeader>
+            <MainHeader style={{display: this.state.showSearch ? 'none' : 'block' }}>
               <div>
                 <img src={Sphenelogo} alt="Sphenelogo" />
               </div>
             </MainHeader>
-            <Navigation>
+            <Navigation style={{display: this.state.showSearch ? 'none' : 'block' }}>
               <NavMenu className="Menu">
                 <li
                   className="dropdown"
@@ -186,28 +185,28 @@ class header extends Component {
                   {this.state.dropdownhover && (
                     <Subdropdown style={{ listStyleType: "none" }}>
                       <li>
-                        <a href="#">Main Demo</a>
+                        <a>Main Demo</a>
                       </li>
                       <li>
-                        <a href="#">Agency Demo</a>
+                        <a>Agency Demo</a>
                       </li>
                       <li>
-                        <a href="#">Classic Demo</a>
+                        <a>Classic Demo</a>
                       </li>
                       <li>
-                        <a href="#">Corporate Demo</a>
+                        <a>Corporate Demo</a>
                       </li>
                       <li>
-                        <a href="#">Resume / CV Demo</a>
+                        <a>Resume / CV Demo</a>
                       </li>
                       <li>
-                        <a href="#">Shop Demo</a>
+                        <a>Shop Demo</a>
                       </li>
                       <li>
-                        <a href="#">Photography Demo</a>
+                        <a>Photography Demo</a>
                       </li>
                       <li>
-                        <a href="#">Magazine / Blog Demo</a>
+                        <a>Magazine / Blog Demo</a>
                       </li>
                     </Subdropdown>
                   )}
@@ -247,8 +246,10 @@ class header extends Component {
                   
                 <li className="search">
                   <Navmenulist href="#">
-                    <NavMenuLi onClick={this.openMenu}>
+                    <NavMenuLi>
+                      <div style={{display: this.state.showSearch ? 'none' : 'block' }} onClick={this.handleSearch} >
                       <FiSearch />
+                      </div>
                     </NavMenuLi>
                   </Navmenulist>
                 </li>
@@ -259,13 +260,17 @@ class header extends Component {
                     </NavMenuLi>
                   </Navmenulist>
                 </li>
-              
               </NavMenu>
-            </Navigation>
+            </Navigation >
+            <HeaderSearch style={{display: this.state.showSearch ? 'block' : 'none' }}> 
+            <input placeholder="to search type and hit enter" />
+            <i onClick={this.handleSearch} style={{display: this.state.showSearch ? 'block' : 'none' }}>
+            <AiOutlineCloseCircle />
+            </i>
+            </HeaderSearch>
             <Responsivemenu onClick={this.handleReasponsiveDropdownClick}>
               <i > 
                 <GiHamburgerMenu />
-          
               </i>
               Menu
               {this.state.openresponsivemenu && (
@@ -274,27 +279,27 @@ class header extends Component {
                   <Navmenulist href="/Home" className="current">Home</Navmenulist>
                 </li>
                 <li className="dropdown">
-                  <Navmenulist href="#" className="current">
+                  <Navmenulist className="current">
                     PORTFOLIO
                   </Navmenulist>
                 </li>
                 <li className="dropdown">
-                  <Navmenulist href="#" className="current">
+                  <Navmenulist className="current">
                     PAGES
                   </Navmenulist>
                 </li>
                 <li className="dropdown">
-                  <Navmenulist href="#" className="current">
+                  <Navmenulist className="current">
                     ELEMENTS
                   </Navmenulist>
                 </li>
                 <li className="dropdown">
-                  <Navmenulist href="#" className="current">
+                  <Navmenulist className="current">
                     SHOP
                   </Navmenulist>
                 </li>
                 <li className="dropdown">
-                  <Navmenulist href="#" className="current">
+                  <Navmenulist className="current">
                     BLOG
                   </Navmenulist>
                 </li>
@@ -309,11 +314,9 @@ class header extends Component {
               <div style={{display: this.state.showIcon ? 'none' : 'block' }}> 
               <FiSearch />
                 </div>
-                
                 <div style={{display: this.state.showIcon ? 'block' : 'none' }}> 
                 <GrFormClose  />
                 </div>
-              
               </ResponsiveIcons>
              
             </Responsivemenu>

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Mainbanner from "./Style";
 import * as classes from "./header.css";
 import Carousel from "react-elastic-carousel";
 import SlideIamgeone from "../../Assets/Images/slide-01.jpg";
@@ -43,7 +42,7 @@ class banner extends Component {
           showArrows={false}
         >
           {items.map((item) => (
-            <StyledDiv key={item.id}>
+            <StyledDiv key={item.id} alt="image">
               <img src={item.url}></img>
               <Carouselcontent>
                 <h2>Creative Essence</h2>

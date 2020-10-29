@@ -3,9 +3,7 @@ import React, { Component } from "react";
 import history from "../History/history";
 import Login from "../Common-Components/Loginpage/Loginpage";
 import Signup from "../Common-Components/Loginpage/Signup";
-import ReactDOM from 'react-dom';
 import Home from "../Pages/Home/Home";
-import {withRouter} from 'react-router';
 import Contactus from "../Pages/Contact-us/ContactUs";
 import View from "../Pages/View/View";
 import { BrowserRouter} from "react-router-dom";
@@ -48,7 +46,7 @@ export default class Routes extends Component {
           <Route path="/Signup" component={Signup} />
           {this.state.user != null ? (
             <Switch>
-              <Route path="/Home" component={withRouter(Home)} />
+              <Route path="/Home" component={Home} />
               <Route path="/Contactus" component={Contactus} />
               <Route path="/View" component={View} />
             </Switch>
@@ -57,7 +55,6 @@ export default class Routes extends Component {
            )}
         </Switch>
         </BrowserRouter>
-        
       </Router>
     );
   }
