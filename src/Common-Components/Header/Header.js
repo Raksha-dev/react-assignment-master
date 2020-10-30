@@ -3,7 +3,7 @@ import Sphenelogo from "../../Assets/Images/logo-2.png";
 import { FiSearch } from "react-icons/fi";
 import { BiCart } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
-import firebase from '../../Pages/Contact-us/firebase'
+import firebase from "../../Pages/Contact-us/firebase";
 import { GrFormClose } from "react-icons/gr";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 
@@ -52,7 +52,7 @@ class header extends Component {
     dropdownhover: false,
     showIcon: false,
     showSearch: false,
-    closeSearch: false
+    closeSearch: false,
   };
   handleDropdownClick = () => {
     this.setState((state) => {
@@ -65,26 +65,26 @@ class header extends Component {
     this.setState((state) => {
       return {
         openresponsivemenu: !state.openresponsivemenu,
-        showIcon: !state.showIcon
+        showIcon: !state.showIcon,
       };
     });
   };
   handleSearch = () => {
     this.setState((state) => {
       return {
-        showSearch: !state.showSearch
-      }
-    })
-    console.log("hey")
-  }
+        showSearch: !state.showSearch,
+      };
+    });
+    console.log("hey");
+  };
   closeSearch = () => {
     this.setState((state) => {
       return {
-        closeSearch: !state.closeSearch
-      }
-    })
-    console.log("bye")
-  }
+        closeSearch: !state.closeSearch,
+      };
+    });
+    console.log("bye");
+  };
   toggle() {
     this.setState((prevState) => ({
       dropdownhover: !prevState.dropdownhover,
@@ -98,10 +98,10 @@ class header extends Component {
   onMouseLeave() {
     this.setState({ dropdownhover: false });
   }
-  logout = () =>{
-    console.log("Logout")
+  logout = () => {
+    console.log("Logout");
     firebase.auth().signOut();
-  }
+  };
 
   render() {
     return (
@@ -110,7 +110,7 @@ class header extends Component {
         <TopBar>
           <Container>
             <Topbarmenu style={{ listStyleType: "none" }}>
-            <button onClick={this.logout}>Logout</button>
+              <button onClick={this.logout}>Logout</button>
               <li>
                 <PhoneIcon className="fa fa-phone"></PhoneIcon>
                 (564) 123 4567
@@ -167,7 +167,6 @@ class header extends Component {
                     <i className="icon-pinterest"></i>
                   </PinterestIcon>
                 </li>
-                
               </SocialIcons>
             </TopbarmenuSocialIcons>
           </Container>
@@ -177,12 +176,18 @@ class header extends Component {
         {/* ****************************************MAIN HEADER************************ */}
         <Subheader>
           <MainHeaderContainer>
-            <MainHeader style={{display: this.state.showSearch ? 'none' : 'block' }}>
+            <MainHeader
+              style={{ display: this.state.showSearch ? "block" : "none" }}
+              style={{ display: this.state.closeSearch ? "none" : "block" }}
+            >
               <div>
                 <img src={Sphenelogo} alt="Sphenelogo" />
               </div>
             </MainHeader>
-            <Navigation style={{display: this.state.showSearch ? 'none' : 'block' }}>
+            <Navigation
+              style={{ display: this.state.showSearch ? "block" : "none" }}
+              style={{ display: this.state.closeSearch ? "none" : "block" }}
+            >
               <NavMenu className="Menu">
                 <li
                   className="dropdown"
@@ -190,7 +195,9 @@ class header extends Component {
                   onMouseLeave={this.onMouseLeave}
                   isopen={this.state.dropdownOpen}
                 >
-                  <Navmenulist href="/Home" className="current">Home</Navmenulist>
+                  <Navmenulist href="/Home" className="current">
+                    Home
+                  </Navmenulist>
                   {this.state.dropdownhover && (
                     <Subdropdown style={{ listStyleType: "none" }}>
                       <li>
@@ -251,13 +258,21 @@ class header extends Component {
                   </Navmenulist>
                 </li>
                 {/* ***********SEARCH ICON ******************** */}
-              
-                  
+
                 <li className="search">
                   <Navmenulist href="#">
                     <NavMenuLi>
-                      <div style={{display: this.state.showSearch ? 'none' : 'block' }} onClick={this.handleSearch} >
-                      <FiSearch />
+                      <div
+                        onClick={this.handleSearch}
+                        style={{
+                          display: this.state.showSearch ? "block" : "none",
+                        }}
+                        onClick={this.closeSearch}
+                        style={{
+                          display: this.state.closeSearch ? "none" : "block",
+                        }}
+                      >
+                        <FiSearch />
                       </div>
                     </NavMenuLi>
                   </Navmenulist>
@@ -270,66 +285,66 @@ class header extends Component {
                   </Navmenulist>
                 </li>
               </NavMenu>
-            </Navigation >
-            <HeaderSearch style={{display: this.state.showSearch ? 'block' : 'none' }}> 
-            <input placeholder="to search type and hit enter"  onClick={this.closeSearch} />
-            <div >
-            <AiOutlineCloseCircle />
-            </div>
+            </Navigation>
+            <HeaderSearch
+              style={{ display: this.state.showSearch ? "none" : "block" }}
+              style={{ display: this.state.closeSearch ? "block" : "none" }}
+            >
+              <input
+                placeholder="to search type and hit enter"
+                onClick={this.closeSearch}
+              />
+              <div>
+                <AiOutlineCloseCircle />
+              </div>
             </HeaderSearch>
             <Responsivemenu onClick={this.handleReasponsiveDropdownClick}>
-              <i > 
+              <i>
                 <GiHamburgerMenu />
               </i>
               Menu
               {this.state.openresponsivemenu && (
-              <ResponsiveOption style={{ listStyleType: "none" }}>
-                <li>
-                  <Navmenulist href="/Home" className="current">Home</Navmenulist>
-                </li>
-                <li className="dropdown">
-                  <Navmenulist className="current">
-                    PORTFOLIO
-                  </Navmenulist>
-                </li>
-                <li className="dropdown">
-                  <Navmenulist className="current">
-                    PAGES
-                  </Navmenulist>
-                </li>
-                <li className="dropdown">
-                  <Navmenulist className="current">
-                    ELEMENTS
-                  </Navmenulist>
-                </li>
-                <li className="dropdown">
-                  <Navmenulist className="current">
-                    SHOP
-                  </Navmenulist>
-                </li>
-                <li className="dropdown">
-                  <Navmenulist className="current">
-                    BLOG
-                  </Navmenulist>
-                </li>
-                <li className="dropdown">
-                  <Navmenulist href="/Contactus" className="current">
-                    <div>CONTACT</div>
-                  </Navmenulist>
-                </li>
-                    </ResponsiveOption>
-                 )}
-              <ResponsiveIcons >
-              <div style={{display: this.state.showIcon ? 'none' : 'block' }}> 
-              <FiSearch />
+                <ResponsiveOption style={{ listStyleType: "none" }}>
+                  <li>
+                    <Navmenulist href="/Home" className="current">
+                      Home
+                    </Navmenulist>
+                  </li>
+                  <li className="dropdown">
+                    <Navmenulist className="current">PORTFOLIO</Navmenulist>
+                  </li>
+                  <li className="dropdown">
+                    <Navmenulist className="current">PAGES</Navmenulist>
+                  </li>
+                  <li className="dropdown">
+                    <Navmenulist className="current">ELEMENTS</Navmenulist>
+                  </li>
+                  <li className="dropdown">
+                    <Navmenulist className="current">SHOP</Navmenulist>
+                  </li>
+                  <li className="dropdown">
+                    <Navmenulist className="current">BLOG</Navmenulist>
+                  </li>
+                  <li className="dropdown">
+                    <Navmenulist href="/Contactus" className="current">
+                      <div>CONTACT</div>
+                    </Navmenulist>
+                  </li>
+                </ResponsiveOption>
+              )}
+              <ResponsiveIcons>
+                <div
+                  style={{ display: this.state.showIcon ? "none" : "block" }}
+                >
+                  <FiSearch />
                 </div>
-                <div style={{display: this.state.showIcon ? 'block' : 'none' }}> 
-                <GrFormClose  />
+                <div
+                  style={{ display: this.state.showIcon ? "block" : "none" }}
+                >
+                  <GrFormClose />
                 </div>
               </ResponsiveIcons>
-             
             </Responsivemenu>
-            
           </MainHeaderContainer>
         </Subheader>
       </>

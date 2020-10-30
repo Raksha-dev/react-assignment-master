@@ -5,8 +5,8 @@ import {Image, Card,InactiveCard} from './Style'
 export default class card extends Component {
     state = {
         data:Img,
-        active:1        
-    }
+        active:1,
+        }
     render() {
         this.state.data = this.props.data
         this.state.active = this.props.active
