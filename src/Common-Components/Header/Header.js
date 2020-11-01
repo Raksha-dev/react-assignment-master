@@ -6,7 +6,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import firebase from "../../Pages/Contact-us/firebase";
 import { GrFormClose } from "react-icons/gr";
 import { AiOutlineCloseCircle } from "react-icons/ai";
-
+import Search from './Search'
 import {
   HeaderSearch,
   ResponsiveOption,
@@ -61,6 +61,7 @@ class header extends Component {
       };
     });
   };
+  
   handleReasponsiveDropdownClick = () => {
     this.setState((state) => {
       return {
@@ -104,6 +105,9 @@ class header extends Component {
   };
 
   render() {
+    const divStyle = {
+      marginLeft: '-147px',
+    };
     return (
       <>
         {/* ******************************************TOPBAR********************************************************** */}
@@ -346,6 +350,7 @@ class header extends Component {
               </ResponsiveIcons>
             </Responsivemenu>
           </MainHeaderContainer>
+          <Search />
         </Subheader>
       </>
     );

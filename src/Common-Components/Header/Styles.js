@@ -45,16 +45,15 @@ export const EnvelopeIcon = styled.i`
   & ::before {
     content: "\f0e0";
   }
-`
+`;
 export const CaretIcon = styled.i`
   font-family: "FontAwesome";
-    font-size: 14px;
-    color: #b0b0b0;
-    top: 1px;
-    margin-left: 5px;
-    position: relative;
-  
-`
+  font-size: 14px;
+  color: #b0b0b0;
+  top: 1px;
+  margin-left: 5px;
+  position: relative;
+`;
 export const Option = styled.ul`
   position: absolute;
   background-color: black;
@@ -71,7 +70,7 @@ export const Option = styled.ul`
   }
 `;
 export const ResponsiveOption = styled.ul`
-margin-top: -20px;
+  margin-top: -20px;
   position: absolute;
   background-color: black;
   position: absolute;
@@ -88,7 +87,7 @@ margin-top: -20px;
 `;
 export const TopbarDropdown = styled.div`
   cursor: pointer;
-`
+`;
 export const Arrow = styled.div`
   width: 0;
   height: 0;
@@ -98,7 +97,7 @@ export const Arrow = styled.div`
   position: absolute;
   top: -5px;
   left: 10px;
-`
+`;
 // ************************************************************************************************//
 export const SocialIcons = styled.ul`
   margin: 0;
@@ -112,89 +111,89 @@ export const SocialIcons = styled.ul`
 `;
 
 export const FacebookIcon = styled.a`
-     border: 1px solid transparent;
-     padding: 10px;
-    display: inline-block;
-    background-color: #f5f5f5;
-    position: relative;
-    overflow: hidden;  
-    border-radius: 0;
-    transform: scale(1);
-    margin-right: 0;
-     
-     &:hover {
-      transition: all 0.5s ease-in-out;
-      background-color: #337ab7;
-      color: #fff;
-     }
+  border: 1px solid transparent;
+  padding: 10px;
+  display: inline-block;
+  background-color: #f5f5f5;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  transform: scale(1);
+  margin-right: 0;
+
+  &:hover {
+    transition: all 0.5s ease-in-out;
+    background-color: #337ab7;
+    color: #fff;
+  }
 `;
 export const TwitterIcon = styled.a`
-     border: 1px solid transparent;
-     padding: 10px;
-    display: inline-block;
-    background-color: #f5f5f5;
-    position: relative;
-    overflow: hidden;  
-    border-radius: 0;
-    transform: scale(1);
-    margin-right: 0;
-     
-     &:hover {
-      transition: all 0.5s ease-in-out;
-      background-color: skyblue;
-      color: #fff;
-     }
+  border: 1px solid transparent;
+  padding: 10px;
+  display: inline-block;
+  background-color: #f5f5f5;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  transform: scale(1);
+  margin-right: 0;
+
+  &:hover {
+    transition: all 0.5s ease-in-out;
+    background-color: skyblue;
+    color: #fff;
+  }
 `;
 export const DribbleIcon = styled.a`
-     border: 1px solid transparent;
-     padding: 10px;
-    display: inline-block;
-    background-color: #f5f5f5;
-    position: relative;
-    overflow: hidden;  
-    border-radius: 0;
-    transform: scale(1);
-    margin-right: 0;
-     
-     &:hover {
-      transition: all 0.5s ease-in-out;
-      background-color: darksalmon;
-      color: #fff;
-     }
+  border: 1px solid transparent;
+  padding: 10px;
+  display: inline-block;
+  background-color: #f5f5f5;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  transform: scale(1);
+  margin-right: 0;
+
+  &:hover {
+    transition: all 0.5s ease-in-out;
+    background-color: darksalmon;
+    color: #fff;
+  }
 `;
 export const GoogleIcon = styled.a`
-     border: 1px solid transparent;
-     padding: 10px;
-    display: inline-block;
-    background-color: #f5f5f5;
-    position: relative;
-    overflow: hidden;  
-    border-radius: 0;
-    transform: scale(1);
-    margin-right: 0;
-     
-     &:hover {
-      transition: all 0.5s ease-in-out;
-      background-color: red;
-      color: #fff;
-     }
+  border: 1px solid transparent;
+  padding: 10px;
+  display: inline-block;
+  background-color: #f5f5f5;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  transform: scale(1);
+  margin-right: 0;
+
+  &:hover {
+    transition: all 0.5s ease-in-out;
+    background-color: red;
+    color: #fff;
+  }
 `;
 export const PinterestIcon = styled.a`
-     border: 1px solid transparent;
-     padding: 10px;
-    display: inline-block;
-    background-color: #f5f5f5;
-    position: relative;
-    overflow: hidden;  
-    border-radius: 0;
-    transform: scale(1);
-    margin-right: 0;
-     
-     &:hover {
-      transition: all 0.5s ease-in-out;
-      background-color: maroon;
-      color: #fff;
-     }
+  border: 1px solid transparent;
+  padding: 10px;
+  display: inline-block;
+  background-color: #f5f5f5;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  transform: scale(1);
+  margin-right: 0;
+
+  &:hover {
+    transition: all 0.5s ease-in-out;
+    background-color: maroon;
+    color: #fff;
+  }
 `;
 // ************************************************************************************************//
 
@@ -222,8 +221,8 @@ export const TopbarmenuSocialIcons = styled.div`
   margin: 0;
   /* padding: 8px 0; */
   display: inline-flex;
-  @media(max-width: 768px) {
-margin-top: -14px;
+  @media (max-width: 768px) {
+    margin-top: -14px;
   }
 `;
 // ************************************************************************/*********************************
@@ -234,7 +233,7 @@ export const MainHeader = styled.div`
   justify-content: space-between;
 
   & img {
-    margin-left: 20px
+    margin-left: 20px;
   }
   @media (min-width: 320px) and (max-width: 768px) {
     width: 100%;
@@ -243,13 +242,11 @@ export const MainHeader = styled.div`
     display: inline-block;
     margin: 25px 0;
     & img {
-      margin-left: -20px
+      margin-left: -20px;
     }
   }
-`
-export const Subheader = styled.div `
-
-`
+`;
+export const Subheader = styled.div``;
 export const MainHeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -258,7 +255,7 @@ export const MainHeaderContainer = styled.div`
   @media (min-width: 320px) and (max-width: 768px) {
     display: block;
   }
-`
+`;
 export const Navigation = styled.nav``;
 export const NavMenu = styled.ul`
   font-size: 13px;
@@ -274,28 +271,26 @@ export const NavMenu = styled.ul`
   @media (min-width: 320px) and (max-width: 768px) {
     display: none;
   }
-
-  `
-export const Navmenulist = styled.a `
-   font-weight: bold;
-    font-size: 13px;
-    color: #333;
-    text-decoration: none;
-    display: inline-block;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-bottom: none;
-    margin-right: 5px;
-    padding: 26px 10px;
-    /* border-bottom: 2px solid; */
-    :hover {
-      border-bottom: 2px solid green !important;
-      padding-bottom: 24px;
-    }
-`
-  export const NavMenuLi = styled.i `
-  `
-export  const Subdropdown = styled.ul `
+`;
+export const Navmenulist = styled.a`
+  font-weight: bold;
+  font-size: 13px;
+  color: #333;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: none;
+  margin-right: 5px;
+  padding: 26px 10px;
+  /* border-bottom: 2px solid; */
+  :hover {
+    border-bottom: 2px solid green !important;
+    padding-bottom: 24px;
+  }
+`;
+export const NavMenuLi = styled.i``;
+export const Subdropdown = styled.ul`
   color: white;
   position: absolute;
   background-color: black;
@@ -319,16 +314,16 @@ export  const Subdropdown = styled.ul `
     color: #fff;
     background-color: green;
   }
-` 
+`;
 // ********************************************//
 
-export const Responsivemenu = styled.div `
-display: none;
+export const Responsivemenu = styled.div`
+  display: none;
 
-@media (min-width: 320px) and (max-width: 768px) {
-  background-color: rgb(68, 178, 114) !important;
-  margin-bottom: 40px;
-  display: block;
+  @media (min-width: 320px) and (max-width: 768px) {
+    background-color: rgb(68, 178, 114) !important;
+    margin-bottom: 40px;
+    display: block;
     content: menu;
     font-weight: 600;
     background-color: black;
@@ -345,63 +340,127 @@ display: none;
     background: rgba(255, 255, 255, 0.2);
     & i {
       padding: 20px;
-    margin: 0;
-    font-size: 18px;
+      margin: 0;
+      font-size: 18px;
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      font-weight: 500;
+      cursor: pointer;
+    }
+  }
+  & i {
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
     font-size: inherit;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
-    font-weight: 500;
-    cursor: pointer;
-    }
-}
-& i {
-  display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-}
-`
-export const ResponsiveIcons = styled.i `
-    background-color: green;
+  }
+`;
+export const ResponsiveIcons = styled.i`
+  background-color: green;
 
-    position: absolute;
-    right: 0;
-    background: rgba(255,255,255,.15);
-    width: 57px;
-    z-index: 999;
-    top: 0;
-    padding: 20px;
-    margin: 0;
-    font-size: 18px;
-    font-weight: 500;
-    cursor: pointer;
-`
-export const ToprResponsive = styled.li `
-  @media (min-width: 375px) and (max-width: 768px) {
-    
-      margin-left: 160px !important;
-      margin-top: -28px!important;
-}
-`
-export const Menu = styled.div ``
-
-export const HeaderSearch = styled.div `
-& input {
-  margin-top: 8px;
-  outline: none;
+  position: absolute;
+  right: 0;
+  background: rgba(255, 255, 255, 0.15);
+  width: 57px;
+  z-index: 999;
+  top: 0;
   padding: 20px;
-  width: 1240px;
-  text-align: center;
-  background-color: transparent !important;
-  border: none;
-}
-& div {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+`;
+export const ToprResponsive = styled.li`
+  @media (min-width: 375px) and (max-width: 768px) {
+    margin-left: 160px !important;
+    margin-top: -28px !important;
+  }
+`;
+export const Menu = styled.div``;
+
+export const HeaderSearch = styled.div`
+  & input {
+    margin-top: 8px;
+    outline: none;
+    padding: 20px;
+    width: 1240px;
+    text-align: center;
+    background-color: transparent !important;
+    border: none;
+  }
+  & div {
     cursor: pointer;
     margin-top: -43px;
     padding: 11px;
     float: right;
-}
-`
+  }
+`;
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^//
+
+export const StyleSwitcher = styled.div`
+  background: #333;
+  width: 188px;
+  top: 80px;
+  z-index: 9999;
+  left: -205px;
+  border-radius: 0 0 3px 0;
+  & h2 {
+    background: #282828;
+    color: #fff;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 46px;
+    padding: 0 0 0 20px;
+    letter-spacing: 1px;
+    margin-top: 0;
+    text-transform: uppercase;
+  }
+  & i {
+    position: relative;
+    top: 6px;
+    font-family: "simple-line-icons" !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+  }
+`;
+export const SwitcherA = styled.a`
+  background-color: #282828;
+  display: block;
+  height: 46px;
+  position: absolute;
+  right: -46px;
+  top: 0;
+  width: 46px;
+  border-radius: 0 3px 3px 0;
+  font-size: 22px;
+  color: #fff;
+  text-align: center;
+`;
+export const Switcherdiv = styled.div``;
+
+export const SwitcherOptions = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin-bottom: 22px;
+  margin: 0 0px 10px 0;
+  overflow: hidden;
+  & li {
+    float: left;
+    margin: 4px 2px 0 2px;
+  }
+  & a {
+    border-radius: 3px;
+    display: block;
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+  }
+`;
