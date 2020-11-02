@@ -13,9 +13,7 @@ export const Container = styled.div`
   @media (min-width: 320px) and (max-width: 425px) {
     display: block;
   }
-  /* @media(max-width: 768px) {
-    display: flex;
-  } */
+
 `;
 export const PhoneIcon = styled.i`
   display: inline-block;
@@ -285,7 +283,7 @@ export const Navmenulist = styled.a`
   padding: 26px 10px;
   /* border-bottom: 2px solid; */
   :hover {
-    border-bottom: 2px solid green !important;
+    border-bottom: 2px solid  ${(props) =>props.color} !important;
     padding-bottom: 24px;
   }
 `;
@@ -312,7 +310,7 @@ export const Subdropdown = styled.ul`
   }
   & :hover {
     color: #fff;
-    background-color: green;
+    background:${(props) =>props.color};
   }
 `;
 // ********************************************//

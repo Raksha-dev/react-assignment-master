@@ -2,12 +2,11 @@ import React, {useState} from 'react';
 import firebase from './firebase';
 import { Inputform } from "./Style";
 import { Messagebox,SubmitButton } from "./Style";
+import {ThemeContext} from '../../Common-Components/context/Theme'
 
-// import {ThemeContext} from '../../Common-Components/context/Theme'
-    // static contextType = ThemeContext;
-    // console.log(this.context);
 
 const Contact = (props) => {
+    
     const [name, setname] = useState("")
     const [email, setemail] = useState("")
     const [subject, setsubject] = useState("")

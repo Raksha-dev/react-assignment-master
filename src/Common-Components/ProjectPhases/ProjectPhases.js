@@ -9,9 +9,14 @@ import Ideaimage from '../../Assets/Icons/idea.JPG'
 import Ideaimagetwo from '../../Assets/Icons/I.JPG'
 import Pulseimage from '../../Assets/Icons/pulse.JPG'
 import Shipimage from '../../Assets/Icons/ship.JPG'
+import {ThemeContext} from '../context/Theme'
 
 class projectphase extends Component {
+    static contextType=ThemeContext;
+
     render() {
+        console.log(this.context);
+        const { darkColor } = this.context;
         return (
             <Projectphases>
                 <ProjectphasesContent>

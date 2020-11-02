@@ -16,7 +16,7 @@ import { Contactform } from "./Style";
 import { Container } from "./Style";
 import { Contactlist } from "./Style";
 import { Phoneicon } from "./Style";
-import { Containertwo } from "./Style";
+import { Containertwo,Ouroffice,ContactEmail } from "./Style";
 import {ThemeContext} from '../../Common-Components/context/Theme'
 import Contact from './contact';
 class contactus extends Component {
@@ -32,7 +32,7 @@ class contactus extends Component {
           <Containerimg src={Mapedgeimage} alt="map" />
           <Contactusimage>
             <Contactimg />
-            <h2>Our Office</h2>
+            <Ouroffice color={darkColor}>Our Office</Ouroffice>
             <Officeaddress>
               <li>45 Park Avenue, Apt. 303</li>
               <li>New York, NY 10016</li>
@@ -68,21 +68,21 @@ class contactus extends Component {
                     <i><BiGlobe /></i>
                     <Phoneicon>
                     <strong>Phone:</strong>
-                    <span><a href="#">www.example.com</a> </span>
+                    <span><ContactEmail color={darkColor}>www.example.com</ContactEmail> </span>
                     </Phoneicon>
                 </li>
                 <li>
                     <i><AiOutlineMail /></i>
                     <Phoneicon>
                     <strong>Phone:</strong>
-                    <span><a href="#">office@example.com</a> </span>
+                    <span><ContactEmail color={darkColor}>office@example.com</ContactEmail> </span>
                     </Phoneicon>
                 </li>
                 
             </Contactlist>
           </Container>
         <Containertwo>
-          <Contact darkColor={darkColor} />
+          <Contact color={darkColor} />
         </Containertwo>
         </Contactform>
         <Footer />

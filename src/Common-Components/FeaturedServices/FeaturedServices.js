@@ -9,14 +9,19 @@ import {FeaturedServices} from './Style'
 import {FeaturedServicesWrapper} from './Style'
 import {FeaturedServicesContent} from './Style'
 import {FeaturedServicesAlignment} from './Style'
+import {ThemeContext} from '../context/Theme'
 
 class services extends Component {
+    static contextType=ThemeContext;
+
     render () {
+        console.log(this.context);
+    const { darkColor } = this.context;
         return (
             <>
-            <FeaturedServicesWrapper>
+            <FeaturedServicesWrapper color={darkColor}>
                 <FeaturedServices>
-                    <FeaturedServicesContent>
+                    <FeaturedServicesContent >
                         <FeaturedServicesAlignment>
                                 <i>
                                 <AiOutlineUserAdd />
@@ -47,7 +52,7 @@ class services extends Component {
                </FeaturedServices> 
             </FeaturedServicesWrapper>
             {/* ********************************************************************************** */}
-            <FeaturedServicesWrapper>
+            <FeaturedServicesWrapper color={darkColor}>
                 <FeaturedServices>
                     <FeaturedServicesContent>
                         <FeaturedServicesAlignment>

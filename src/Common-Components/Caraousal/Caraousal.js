@@ -3,6 +3,9 @@ import * as classes from "./header.css";
 import Carousel from "react-elastic-carousel";
 import SlideIamgeone from "../../Assets/Images/slide-01.jpg";
 import SlideIamgetwo from "../../Assets/Images/slide-03.jpg";
+import { Messagebox,SubmitButton } from "./Style";
+import {ThemeContext} from '../context/Theme'
+
 import {
   StyledDiv,
   Buttonleft,
@@ -12,6 +15,8 @@ import {
 } from "./Style";
 
 class banner extends Component {
+  static contextType=ThemeContext;
+
   state = {
     items: [
       { id: 1, title: "Creative Essence", url: SlideIamgeone },
@@ -19,6 +24,8 @@ class banner extends Component {
     ],
   };
   render() {
+    console.log(this.context);
+    const { darkColor } = this.context;
     const { items } = this.state;
     return (
       <CarouselContainer>
@@ -51,7 +58,7 @@ class banner extends Component {
                   ubiquitous interfaces. Energistically fabricate an expanded
                   array of niche markets through robust products.
                 </p>
-                <button>Purchase Now</button>
+                <SubmitButton color={darkColor}>Purchase Now</SubmitButton>
               </Carouselcontent>
             </StyledDiv>
           ))}

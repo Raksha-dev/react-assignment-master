@@ -108,6 +108,8 @@ class header extends Component {
     const divStyle = {
       marginLeft: '-147px',
     };
+    console.log(this.context);
+    const { darkColor } = this.context;
     return (
       <>
         {/* ******************************************TOPBAR********************************************************** */}
@@ -199,11 +201,11 @@ class header extends Component {
                   onMouseLeave={this.onMouseLeave}
                   isopen={this.state.dropdownOpen}
                 >
-                  <Navmenulist href="/Home" className="current">
+                  <Navmenulist color={darkColor} href="/Home" className="current">
                     Home
                   </Navmenulist>
                   {this.state.dropdownhover && (
-                    <Subdropdown style={{ listStyleType: "none" }}>
+                    <Subdropdown style={{ listStyleType: "none" }} color={darkColor}>
                       <li>
                         <a>Main Demo</a>
                       </li>
@@ -232,39 +234,39 @@ class header extends Component {
                   )}
                 </li>
                 <li className="dropdown">
-                  <Navmenulist href="#" className="current">
+                  <Navmenulist color={darkColor} className="current">
                     PORTFOLIO
                   </Navmenulist>
                 </li>
                 <li className="dropdown">
-                  <Navmenulist href="#" className="current">
+                  <Navmenulist color={darkColor} className="current">
                     PAGES
                   </Navmenulist>
                 </li>
                 <li className="dropdown">
-                  <Navmenulist href="#" className="current">
+                  <Navmenulist color={darkColor} className="current">
                     ELEMENTS
                   </Navmenulist>
                 </li>
                 <li className="dropdown">
-                  <Navmenulist href="#" className="current">
+                  <Navmenulist color={darkColor} className="current">
                     SHOP
                   </Navmenulist>
                 </li>
                 <li className="dropdown">
-                  <Navmenulist href="#" className="current">
+                  <Navmenulist color={darkColor} className="current">
                     BLOG
                   </Navmenulist>
                 </li>
                 <li className="dropdown">
-                  <Navmenulist href="/Contactus" className="current">
+                  <Navmenulist href="/Contactus" color={darkColor} className="current">
                     <div>CONTACT</div>
                   </Navmenulist>
                 </li>
                 {/* ***********SEARCH ICON ******************** */}
 
                 <li className="search">
-                  <Navmenulist href="#">
+                  <Navmenulist color={darkColor}>
                     <NavMenuLi>
                       <div
                         onClick={this.handleSearch}
@@ -282,7 +284,7 @@ class header extends Component {
                   </Navmenulist>
                 </li>
                 <li className="search">
-                  <Navmenulist href="#">
+                  <Navmenulist color={darkColor}>
                     <NavMenuLi>
                       <BiCart />
                     </NavMenuLi>

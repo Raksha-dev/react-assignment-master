@@ -11,7 +11,7 @@ export const ImageEdge = styled.div`
   max-height: 640px;
   overflow: hidden;
   padding: 0;
-  @media (min-width: 320px) and (max-width: 768px){
+  @media (min-width: 320px) and (max-width: 768px) {
     display: block;
     height: 100%;
   }
@@ -51,26 +51,33 @@ export const ImageEdgeContent = styled.div`
       font-size: 18px;
     }
     img {
-      margin: -30px
+      margin: -30px;
     }
   }
-  & button {
-    font-family: "Montserrat", "HelveticaNeue", "Helvetica Neue", Helvetica,
-      Arial, sans-serif;
-    margin-top: 44px;
-    background: transparent;
-    margin-bottom: 44px;
-    padding: 12px 26px 12px 26px;
-    border-radius: 20px;
-    transition: all 0.2s ease-in-out;
-    font-weight: 600;
-    cursor: pointer;
-    border-radius: 50px;
-    letter-spacing: 1px;
-  }
-  & button:hover {
+`;
+export const SubmitButton = styled.button`
+  font-family: "Montserrat", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  margin-top: 44px;
+  background: transparent;
+  margin-bottom: 44px;
+  padding: 12px 26px 12px 26px;
+  border-radius: 20px;
+  transition: all 0.2s ease-in-out;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 50px;
+  letter-spacing: 1px;
+  border-color: ${(props) => props.color};
+  color: ${(props) => props.color};
+  &:hover {
     color: white;
-    background-color: green;
+    background: ${(props) => props.color};
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
   }
 `;
 

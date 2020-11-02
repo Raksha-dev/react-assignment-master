@@ -6,10 +6,12 @@ export const FeaturedServicesWrapper = styled.div `
     display: flex;
     position: relative;
     color: #666;
-
+    
     & :hover {
-        background-color: green;
-        color: #fff;
+        color: white;
+       background: ${(props) => props.color};
+        /* background-color: green;
+        color: #fff; */
     }
     @media (min-width: 320px) and (max-width: 768px) {
         display: block;

@@ -16,8 +16,9 @@ export const Mapimage = styled.div`
 `;
 export const Contactusimage = styled.div`
   background-image: url(${contactimage});
-  & h2 {
-    border-bottom: 1px solid;
+`;
+export const Ouroffice = styled.h2 `
+    border-bottom: 1px solid ${(props) =>props.color};
     width: 20p;
     padding-bottom: 20px;
     margin: 0 104px;
@@ -26,8 +27,7 @@ export const Contactusimage = styled.div`
     color: #fff;
     margin-top: 0;
     text-align: center;
-  }
-`;
+`
 export const Officeaddress = styled.ul`
   color: white;
   text-align: center;
@@ -175,21 +175,19 @@ export const Messagebox = styled.div `
   }
 `
 export const SubmitButton = styled.button `
-    width:200px;
-    height:60px;
+    padding: 10px 74px;
     border-radius:30px;
     font-size:18px;
-    color: ${(props) =>props.color};
-    border-color: ${(props) =>props.color};
     font-weight:bold;
     background:white;
+    color: ${(props) =>props.darkColor};
     &:hover{
-        color:white;
-        background:${(props) =>props.color};
         cursor: pointer;
     }
-
     &:focus{
         outline: none;
     }
+`;
+export const ContactEmail = styled.a `
+   color: ${(props) =>props.color};
 `;

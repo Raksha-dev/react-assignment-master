@@ -3,9 +3,8 @@ export const ThemeContext = createContext();
 
 class ThemeProvider extends Component {
   state = {
-    darkColor: "#3448c5",
-    inactiveColor: "#9fbfdf",
-    text_color: "#0f0552",
+    darkColor: "#44b272",
+    textColor: "#0f0552",
   };
   toggleTheme = (newstate) => {
     this.setState({
