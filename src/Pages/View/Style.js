@@ -22,6 +22,7 @@ export const Image = styled.div`
 export const Imagebg = styled.div`
 
   h2 {
+    padding-top: 110px;
     font-size: 70px;
     font-weight: 600;
     color: black;
@@ -36,7 +37,10 @@ export const Imagebg = styled.div`
     @media (min-width: 320px) and (max-width: 425px) {
     font-size: 25px !important;
   }
+  @media (max-width: 768px) {
+    font-size: 27px !important;
   }
+} 
   
 `;
 export const Portfoilocontent = styled.div``;
@@ -94,7 +98,7 @@ export const Columntwo = styled.ul`
 `;
 // ********************************************************//
 export const Imageeddge = styled.div`
-@media (min-width: 320px) and (max-width: 375px) {
+@media (min-width: 320px) and (max-width: 768px) {
   display: none;
 }
   width: 100%;
@@ -106,7 +110,7 @@ export const Imageeddge = styled.div`
   max-height: 640px;
 `;
 export const Imageeddgebottom = styled.div`
-@media (min-width: 320px) and (max-width: 375px) {
+@media (min-width: 320px) and (max-width: 768px) {
   display: none;
 }
   width: 100%;

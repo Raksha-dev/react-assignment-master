@@ -3,14 +3,14 @@ import contactimage from "../../Assets/Images/contact-our-office.jpg";
 export const Containerimg = styled.img`
   height: 300px;
   width: 75%;
-  @media (min-width: 320px) and (max-width: 425px) {
+  @media (min-width: 320px) and (max-width: 768px) {
     width: 100%;
   }
 `;
 export const Contactimg = styled.img``;
 export const Mapimage = styled.div`
   display: flex;
-  @media (min-width: 320px) and (max-width: 425px) {
+  @media (min-width: 320px) and (max-width: 768px) {
     display: block;
   }
 `;
@@ -42,12 +42,12 @@ export const Contactform = styled.div`
   display: flex;
   max-width: 1240px;
   margin: 0 auto;
-  @media (min-width: 320px) and (max-width: 425px) {
+  @media (min-width: 320px) and (max-width: 768px) {
     display: block;
   }
 `;
 export const Container = styled.div`
-@media (min-width: 320px) and (max-width: 425px) {
+@media (min-width: 320px) and (max-width: 768px) {
   width: 87%;
   h2 {
     margin-left: 20px;
@@ -105,7 +105,7 @@ export const Containertwo = styled.div`
 `;
 export const Inputform = styled.div`
   display: flex;
-  @media (min-width: 320px) and (max-width: 425px) {
+  @media (min-width: 320px) and (max-width: 768px) {
     display: block;
   }
   & input {
