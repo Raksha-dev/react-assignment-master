@@ -6,7 +6,8 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import firebase from "../../Pages/Contact-us/firebase";
 import { GrFormClose } from "react-icons/gr";
 import { AiOutlineCloseCircle } from "react-icons/ai";
-import Search from './Search'
+import {ThemeContext} from '../context/Theme'
+import Switcher from './Search'
 import {
   HeaderSearch,
   ResponsiveOption,
@@ -40,6 +41,7 @@ import {
 } from "./Styles";
 
 class header extends Component {
+  static contextType=ThemeContext;
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
@@ -76,7 +78,6 @@ class header extends Component {
         showSearch: !state.showSearch,
       };
     });
-    console.log("hey");
   };
   closeSearch = () => {
     this.setState((state) => {
@@ -84,7 +85,6 @@ class header extends Component {
         closeSearch: !state.closeSearch,
       };
     });
-    console.log("bye");
   };
   toggle() {
     this.setState((prevState) => ({
@@ -111,7 +111,7 @@ class header extends Component {
     return (
       <>
         {/* ******************************************TOPBAR********************************************************** */}
-        <TopBar>
+        <TopBar> 
           <Container>
             <Topbarmenu style={{ listStyleType: "none" }}>
               <button onClick={this.logout}>Logout</button>
@@ -350,7 +350,7 @@ class header extends Component {
               </ResponsiveIcons>
             </Responsivemenu>
           </MainHeaderContainer>
-          <Search />
+          <Switcher context={this.context} />
         </Subheader>
       </>
     );

@@ -17,11 +17,14 @@ import { Container } from "./Style";
 import { Contactlist } from "./Style";
 import { Phoneicon } from "./Style";
 import { Containertwo } from "./Style";
-import { Inputform } from "./Style";
-import { Messagebox } from "./Style";
+import {ThemeContext} from '../../Common-Components/context/Theme'
 import Contact from './contact';
 class contactus extends Component {
+  static contextType = ThemeContext;
   render () {
+    console.log(this.context);
+    const { darkColor } = this.context;
+    
     return (
       <>
         <Header />
@@ -79,7 +82,7 @@ class contactus extends Component {
             </Contactlist>
           </Container>
         <Containertwo>
-          <Contact />
+          <Contact darkColor={darkColor} />
         </Containertwo>
         </Contactform>
         <Footer />

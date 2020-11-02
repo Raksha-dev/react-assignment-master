@@ -102,22 +102,6 @@ export const Containertwo = styled.div`
   h3 {
     margin: 0;
   }
-  & button {
-    padding: 11px 72px !important;
-    font-size: 13px;
-    outline: none;
-    background-color: transparent;
-    border: 2px solid #666;
-    padding: 18px 25px;
-    font-weight: bold;
-    line-height: 20px;
-    letter-spacing: 1px;
-    border-radius: 28px;
-  }
-  & button:hover {
-      background-color: green;
-      color: white
-  }
 `;
 export const Inputform = styled.div`
   display: flex;
@@ -190,3 +174,22 @@ export const Messagebox = styled.div `
     box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.03);
   }
 `
+export const SubmitButton = styled.button `
+    width:200px;
+    height:60px;
+    border-radius:30px;
+    font-size:18px;
+    color: ${(props) =>props.color};
+    border-color: ${(props) =>props.color};
+    font-weight:bold;
+    background:white;
+    &:hover{
+        color:white;
+        background:${(props) =>props.color};
+        cursor: pointer;
+    }
+
+    &:focus{
+        outline: none;
+    }
+`;

@@ -11,9 +11,12 @@ import Project from '../../Common-Components/Projects/Projects';
 import Projectphases from '../../Common-Components/ProjectPhases/ProjectPhases';
 import Creativity from '../../Common-Components/Creativity/Creativity';
 import Logocarousel from '../../Common-Components/LogoCarousel/LogoCarousel';
-
+import Scroll from '../../Common-Components/BacktoTop/Scroll';
+// import { ThemeContext } from '../../Common-Components/context/Theme'
  class Home extends Component {
+     
      render() {
+         
          return (
             <div className="wrapper">
             <div className="App" >
@@ -21,9 +24,7 @@ import Logocarousel from '../../Common-Components/LogoCarousel/LogoCarousel';
               <header className="App-header">
                    <Header />
                   </header>
-                  {/* <Dropdown /> */}
                  <Banner>
-                    
                   </Banner>
                   <h3>Featured Services</h3>
                   <Featuredservices />
@@ -32,6 +33,7 @@ import Logocarousel from '../../Common-Components/LogoCarousel/LogoCarousel';
                   <Projectphases />
                   <Creativity />
                   <Logocarousel /> 
+                  <Scroll showBelow={250} />
                   <Footer>
                   </Footer>
               </div>

@@ -1,8 +1,13 @@
 import React, {useState} from 'react';
 import firebase from './firebase';
 import { Inputform } from "./Style";
-import { Messagebox } from "./Style";
-const Contact = () => {
+import { Messagebox,SubmitButton } from "./Style";
+
+// import {ThemeContext} from '../../Common-Components/context/Theme'
+    // static contextType = ThemeContext;
+    // console.log(this.context);
+
+const Contact = (props) => {
     const [name, setname] = useState("")
     const [email, setemail] = useState("")
     const [subject, setsubject] = useState("")
@@ -41,8 +46,7 @@ const Contact = () => {
             <Inputform>
             <textarea placeholder="Message" required={true} value={message} onChange={(e) => setmessage(e.target.value)} />
             </Inputform>
-
-            <button type="submit">Submit</button>
+            <SubmitButton color={props.darkColor}>Submit</SubmitButton>
         </form>
     )
 }

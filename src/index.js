@@ -9,12 +9,18 @@ import ReactDOM from 'react-dom';
 import './Styles/index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import ThemeProvider from './Common-Components/context//Theme'
 const store = createStore(reducer, applyMiddleware(thunk)); 
+
 ReactDOM.render(
   // <React.StrictMode>
   <Provider store={store}>
     <BrowserRouter>
-    <App />
+    
+    <ThemeProvider>
+     <App />
+    </ThemeProvider>
+    
     </BrowserRouter>
  
   </Provider>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FiSettings } from "react-icons/fi";
+import { ThemeContext } from "../../Common-Components/context/Theme";
 import classes from "./style.css";
 import {
   SwitcherA,
@@ -16,6 +17,32 @@ export default function FontAwesomeIcons(props) {
     marginLeft: marginLeft ? "13px" : "205px",
     cursor: "pointer",
   };
+  const greenTheme = () => {
+    const { toggleTheme } = props.context;
+
+    toggleTheme({
+      lightestColor: "#c4fde8",
+      lightColor: "#049761",
+      darkColor: "#024b30",
+      inactiveColor: "#8AC094",
+      text_color: "#013220",
+    });
+  };
+  const yellowTheme = () => {
+    const { toggleTheme } = props.context;
+
+    toggleTheme({
+      lightestColor: "#c4fde8",
+      lightColor: "#049761",
+      darkColor: "#ffb400",
+      inactiveColor: "#8AC094",
+      text_color: "#013220",
+    });
+  };
+  // const handleColorClick = (theme) => {
+  //   console.log("hey");
+  // }
+
   return (
     <StyleSwitcher style={styles}>
       <h2>
@@ -30,10 +57,10 @@ export default function FontAwesomeIcons(props) {
       <Switcherdiv>
         <SwitcherOptions>
           <li>
-            <a className="blue" title="blue"></a>
+            <a className="blue" title="Blue"></a>
           </li>
           <li>
-            <a className="green" title="Green"></a>
+            <a className="green" title="Green" onClick={greenTheme}></a>
           </li>
           <li>
             <a className="orange" title="Orange"></a>
@@ -42,7 +69,7 @@ export default function FontAwesomeIcons(props) {
             <a className="navy" title="Navy"></a>
           </li>
           <li>
-            <a className="yellow" title="Yellow"></a>
+            <a className="yellow" title="Yellow" onClick={yellowTheme}></a>
           </li>
           <li>
             <a className="peach" title="Peach"></a>
