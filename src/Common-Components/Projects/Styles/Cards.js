@@ -38,17 +38,17 @@ export const Column = styled.div`
     margin: 0px !important;
   }
 `;
- export const CategoryButtons = styled.button `
- outline: none;
-    margin: 0 auto;
-    max-width: 1240px;
-    @media (min-width: 320px) and (max-width: 475px) {
-      margin-top: -30px;
+export const CategoryButtons = styled.button`
+  outline: none;
+  margin: 0 auto;
+  max-width: 1240px;
+  @media (min-width: 320px) and (max-width: 475px) {
+    margin-top: -30px;
   }
   :hover {
     background: ${(props) => props.color};
   }
- `
+`;
 export const Row = styled.div`
   display: grid;
   grid-template-columns: repeat(4, auto);
@@ -89,5 +89,15 @@ export const Title = styled.h3`
   margin-top: 70px !important;
   @media (min-width: 320px) and (max-width: 425px) {
     padding-bottom: 40px;
+  }
+`;
+export const Allbuttons = styled.div`
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  margin-bottom: 40px;
+  justify-content: center;
+  &div:hover {
+    background-color: green;
   }
 `;

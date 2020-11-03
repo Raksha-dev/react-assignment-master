@@ -13,7 +13,6 @@ export const Container = styled.div`
   @media (min-width: 320px) and (max-width: 425px) {
     display: block;
   }
-
 `;
 export const PhoneIcon = styled.i`
   display: inline-block;
@@ -283,7 +282,7 @@ export const Navmenulist = styled.a`
   padding: 26px 10px;
   /* border-bottom: 2px solid; */
   :hover {
-    border-bottom: 2px solid  ${(props) =>props.color} !important;
+    border-bottom: 2px solid ${(props) => props.color} !important;
     padding-bottom: 24px;
   }
 `;
@@ -310,7 +309,7 @@ export const Subdropdown = styled.ul`
   }
   & :hover {
     color: #fff;
-    background:${(props) =>props.color};
+    background: ${(props) => props.color};
   }
 `;
 // ********************************************//
@@ -462,13 +461,13 @@ export const SwitcherOptions = styled.ul`
     cursor: pointer;
   }
 `;
-export const LogoutButton = styled.button `
-padding: 0 20px;
-    border-radius: 13px;
-    border-color: ${(props) => props.color};
-    color: ${(props) =>props.color};
-     :hover {
+export const LogoutButton = styled.button`
+  border-color: ${(props) => props.color};
+  color: ${(props) => props.color};
+  border-radius: 20px;
+    margin-top: -1px;
+  :hover {
     color: #fff;
-    background:${(props) =>props.color};
+    background: ${(props) => props.color};
   }
-`
+`;

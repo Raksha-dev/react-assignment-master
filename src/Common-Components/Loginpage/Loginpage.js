@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import { Mainbody, MainbodyContent,Login, Userlogin,ErrorMessage } from "../Login/Style";
 import firebase from "../../Pages/Contact-us/firebase";
 import history from "../../History/history";
+import {withRouter} from 'react-router';
+
+export const historyComponent = withRouter(({ history, location }) => {})
+
 class login extends Component {
   constructor(props) {
     super(props);
@@ -37,8 +41,9 @@ class login extends Component {
     // }
   }
   login(e) {
-    console.log("logging in....");
     e.preventDefault();
+    const { location, history } = this.props
+    console.log("logging in....");
     const isValid = this.ValidateEmail();
     if(isValid){
         firebase
@@ -53,8 +58,9 @@ class login extends Component {
         });
     }
   }
-  signup() {
-    history.push("/Signup")
+  signup(e) {
+    e.preventDefault();
+   
 }
   handleChange(e) {
     console.log(e);
@@ -63,6 +69,9 @@ class login extends Component {
     });
   }
   render() {
+    const { location, history } = this.props
+
+
     return (
       <div>
          <Mainbody>
@@ -92,7 +101,7 @@ class login extends Component {
           />
           <ErrorMessage>{this.state.loginError}</ErrorMessage>
           <button onClick={this.login}>Login</button>
-          <button onClick={this.signup}>Signup</button>
+          <button onClick={this.signup, ()=>history.push("/Signup")}>Signup</button>
           
         </form>
         </Userlogin>
@@ -103,4 +112,4 @@ class login extends Component {
     );
   }
 }
-export default login;
+export default withRouter(login);

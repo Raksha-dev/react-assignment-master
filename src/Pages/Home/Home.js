@@ -42,6 +42,4 @@ import Scroll from '../../Common-Components/BacktoTop/Scroll';
          );
      }
  }
-     
-
 export default withRouter(Home);

@@ -1,9 +1,4 @@
-/* .rec.rec-carousel{
-    
-background-image: url("../../Assets/Images/slide-01.jpg");
-    background-image: url("../../Assets/Images/slide-03.jpg");
-    height: 576px !important;
-} */
+
 .rec.rec-arrow {
     border-radius: 0%;
 }
@@ -33,8 +28,17 @@ background-image: url("../../Assets/Images/slide-01.jpg");
     height: 16px;
     width: 19px;
 }
-/* @media screen and (min-width: 320px) and (max-width: 768px) {
-.rec.rec-pagination {
-    display: none;
+.rec.rec-dot {
+    width: 5px;
+    height: 10px;
+    background-color:rgb(255,255,255);
+    box-shadow: 0 0 1px 3px rgb(255,255,255);
 }
-} */
+.rec.rec-dot_active {
+    background-color:rgb(255,255,255);
+    box-shadow: 0 0 1px 3px rgb(255,255,255);
+}
+.rec.rec-dot_active:hover {
+    /* background-color:rgb(255,255,255); */
+    box-shadow: 0 0 1px 3px rgb(255,255,255);
+}

@@ -58,7 +58,7 @@ class banner extends Component {
                   ubiquitous interfaces. Energistically fabricate an expanded
                   array of niche markets through robust products.
                 </p>
-                <SubmitButton color={darkColor}>Purchase Now</SubmitButton>
+                <SubmitButton color={darkColor}>PURCHASE NOW</SubmitButton>
               </Carouselcontent>
             </StyledDiv>
           ))}
@@ -68,7 +68,7 @@ class banner extends Component {
           style={{
             position: "absolute",
             top: "50%",
-            right: 16,
+            right: 12,
             transform: "translate(22%,-50%)",
           }}
         >

@@ -266,7 +266,7 @@ class header extends Component {
                     <div>CONTACT</div>
                   </Navmenulist>
                 </li>
-                {/* ***********SEARCH ICON ******************** */}
+     {/* ***********SEARCH ICON ******************** */}
 
                 <li className="search">
                   <Navmenulist color={darkColor}>

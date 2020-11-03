@@ -5,6 +5,8 @@ import Singleproject from '../../Assets/Images/single-project-01a.jpg'
 import { RiShip2Line, RiUserSearchLine } from "react-icons/ri";
 import { FaBoxOpen } from "react-icons/fa";
 import { GiPalmTree } from "react-icons/gi";
+import {withRouter} from 'react-router';
+
 
 import {
   Image,
@@ -27,7 +29,7 @@ import {
   EnvironmentaliconsContentone,
   EnvironmentaliconsContentwo
 } from "./Style";
-class view extends Component {
+class View extends Component {
   render() {
     return (
       <>
@@ -133,4 +135,4 @@ class view extends Component {
   }
 }
 
-export default view;
+export default withRouter(View);

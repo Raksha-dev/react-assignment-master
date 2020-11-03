@@ -1,14 +1,15 @@
 import React, { Component } from "react";
-import history from "../../History/history";
+// import history from "../../History/history";
 import Cards from "../../Common-Components/Projects";
+import {withRouter} from 'react-router';
 import Card from "./projectcard";
 import { Data } from "./Data";
-import {CategoryButtons} from './Styles/Cards'
-import {ThemeContext} from '../context/Theme'
+import {CategoryButtons,Allbuttons} from './Styles/Cards';
+import {ThemeContext} from '../context/Theme';
 
-export default class Projects extends Component {
+export const historyComponent = withRouter(({ history, location }) => {})
+class Projects extends Component {
   static contextType=ThemeContext;
-
   constructor(props) {
     super(props);
     this.state = {
@@ -44,6 +45,7 @@ export default class Projects extends Component {
   }
 
   render() {
+    const { location, history } = this.props
     console.log(this.context);
     const { darkColor } = this.context;
     return (
@@ -51,15 +53,12 @@ export default class Projects extends Component {
         <Cards.Title style={{ paddingTop: "60px" }}>
           Our Latest Projects
         </Cards.Title>
-        <Cards.Row style={{ align: "center" }}>
-          <Cards.Column
-            style={
-              ({ marginBottom: "70px" }, { margin: "0px -633px 52px 387px" })
-            }
+        <Allbuttons style={{ align: "center" }}>
+          <div
           >
             <CategoryButtons color={darkColor}
               style={{
-                color: "white",
+                backgroundColor: "transparent",
                 borderRadius: "30px",
                 border: "none",
                 padding: "10px 20px",
@@ -68,15 +67,12 @@ export default class Projects extends Component {
             >
               ALL
             </CategoryButtons>
-          </Cards.Column>
-          <Cards.Column
-            style={
-              ({ marginBottom: "70px" }, { margin: "0px -610px 52px 381px" })
-            }
+          </div>
+          <div
           >
             <CategoryButtons color={darkColor}
               style={{
-                color: "white",
+                backgroundColor: "transparent",
                 borderRadius: "30px",
                 border: "none",
                 padding: "10px 20px",
@@ -85,15 +81,12 @@ export default class Projects extends Component {
             >
               PEOPLE
             </CategoryButtons>
-          </Cards.Column>
-          <Cards.Column
-            style={
-              ({ marginBottom: "70px" }, { margin: "0px -608px 52px 381px" })
-            }
+          </div>
+          <div
           >
             <CategoryButtons color={darkColor}
               style={{
-                color: "white",
+                backgroundColor: "transparent",
                 borderRadius: "30px",
                 border: "none",
                 padding: "10px 20px",
@@ -102,15 +95,12 @@ export default class Projects extends Component {
             >
               ANIMALS
             </CategoryButtons>
-          </Cards.Column>
-          <Cards.Column
-            style={
-              ({ marginBottom: "70px" }, { margin: "0px -256px 52px 381px" })
-            }
+          </div>
+          <div
           >
             <CategoryButtons color={darkColor}
               style={{
-                color: "white",
+                backgroundColor: "transparent",
                 borderRadius: "30px",
                 border: "none",
                 padding: "10px 20px",
@@ -119,18 +109,17 @@ export default class Projects extends Component {
             >
               OTHERS
             </CategoryButtons>
-          </Cards.Column>
-        </Cards.Row>
+          </div>
+        </Allbuttons>
         <Cards.Row>
           {Data.map((item, index) => {
             const images = require.context("../../Assets/Images/", true);
             let img = images("./" + item.imageName);
             console.log(this.state.type);
             console.log(item.type);
-
             if (this.state.all || this.state.type === item.type)
               return (
-                <Cards.Column key={index} onClick={() => history.push("View")}>
+                <Cards.Column key={index} onClick={() => history.push("/View")}>
                   <Card
                     data={img}
                     title={item.title}
@@ -156,3 +145,4 @@ export default class Projects extends Component {
     );
   }
 }
+export default withRouter(Projects);

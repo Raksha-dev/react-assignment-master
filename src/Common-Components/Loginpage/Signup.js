@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import { Mainbody, MainbodyContent,Login, Userlogin,ErrorMessage } from "../Login/Style";
 import firebase from "../../Pages/Contact-us/firebase";
 import history from "../../History/history";
+import {withRouter} from 'react-router';
+
+export const historyComponent = withRouter(({ history, location }) => {})
+
 class signup extends Component {
   constructor(props) {
     super(props);
@@ -39,6 +43,7 @@ class signup extends Component {
   signup(e) {
     console.log("signing up....");
     e.preventDefault();
+    const { location, history } = this.props
     const isValid = this.ValidateEmail();
     // if(this.ValidateEmail(this.state.email)){
       if(isValid){
@@ -62,6 +67,7 @@ class signup extends Component {
     });
   }
   render() {
+    const { location, history } = this.props
     return (
       <div>
          <Mainbody>
@@ -108,7 +114,6 @@ class signup extends Component {
           <ErrorMessage>{this.state.signupError}</ErrorMessage>
           <button onClick={this.signup}>Signup</button>
           <button onClick={this.login}>Login</button>
-          
         </form>
         </Userlogin>
           </Login>
@@ -118,4 +123,4 @@ class signup extends Component {
     );
   }
 }
-export default signup;
+export default withRouter(signup);
