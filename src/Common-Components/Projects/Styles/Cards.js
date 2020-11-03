@@ -5,7 +5,6 @@ export const Container = styled.div`
   background-color: #f8f8f8;
   padding-bottom: 60px;
   @media (max-width: 1000px) {
-    /* padding:40px; */
   }
 `;
 export const Wrapper = styled.div`
@@ -23,6 +22,9 @@ export const Column = styled.div`
   flex-direction: column;
   text-align: left;
   margin-left: 0;
+  ::before {
+    background: green;
+  }
   @media (min-width: 320px) and (max-width: 375px) {
     margin: 0px -21px 41px !important;
     padding-bottom: 35px;

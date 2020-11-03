@@ -48,3 +48,8 @@ export const Userlogin = styled.div`
 export const UserButton = styled.div`
 
 `;
+export const ErrorMessage = styled.p `
+color: red;
+    font-size: 13px;
+    font-family: "open sans", helveticaneue;
+`

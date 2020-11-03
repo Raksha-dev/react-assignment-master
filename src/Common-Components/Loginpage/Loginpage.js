@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Mainbody, MainbodyContent,Login, Userlogin } from "../Login/Style";
+import { Mainbody, MainbodyContent,Login, Userlogin,ErrorMessage } from "../Login/Style";
 import firebase from "../../Pages/Contact-us/firebase";
 import history from "../../History/history";
 class login extends Component {
@@ -11,21 +11,36 @@ class login extends Component {
     this.state = {
       email: "",
       password: "",
+      emailError: "",
+      passwordError: "",
+      loginError: ""
     };
   }
-  ValidateEmail(inputText) {
-    var mailformat = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-    if (inputText.match(mailformat)) {
-      return true;
-    } else {
-      alert("Please enter username and password!");
+  ValidateEmail() {
+    // var mailformat = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    let loginError= "";
+    if(!this.state.email.includes("@")) {
+      loginError = "Please Enter the valid username and password";
+    }
+    if (loginError) {
+      this.setState({loginError})
       return false;
     }
+    return true;
+    // let passwordError= "";
+    // if (inputText.match(mailformat)) {
+    //   return true;
+    // } else {
+      
+    //   return false;
+    
+    // }
   }
   login(e) {
     console.log("logging in....");
     e.preventDefault();
-    if(this.ValidateEmail(this.state.email)){
+    const isValid = this.ValidateEmail();
+    if(isValid){
         firebase
         .auth()
         .signInWithEmailAndPassword(this.state.email, this.state.password)
@@ -64,6 +79,8 @@ class login extends Component {
             onChange={this.handleChange}
             value={this.state.email}
           />
+            
+          
           <input
             name="password"
             type="password"
@@ -73,8 +90,10 @@ class login extends Component {
             // onChange={this.handleChange}
             value={this.state.password}
           />
+          <ErrorMessage>{this.state.loginError}</ErrorMessage>
           <button onClick={this.login}>Login</button>
           <button onClick={this.signup}>Signup</button>
+          
         </form>
         </Userlogin>
           </Login>

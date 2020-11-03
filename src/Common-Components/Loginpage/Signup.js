@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Mainbody, MainbodyContent,Login, Userlogin } from "../Login/Style";
+import { Mainbody, MainbodyContent,Login, Userlogin,ErrorMessage } from "../Login/Style";
 import firebase from "../../Pages/Contact-us/firebase";
 import history from "../../History/history";
 class signup extends Component {
@@ -13,38 +13,35 @@ class signup extends Component {
       email: "",
       password: "",
       confirmpassword: "",
+      signupError: ""
     };
   }
-  ValidateEmail(inputText) {
-    var mailformat = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-    if (inputText.match(mailformat)) {
-      return true;
-    } else {
-      alert("Please enter username and password!");
+  ValidateEmail() {
+    let signupError= "";
+    if(!this.state.email.includes("@")) {
+      signupError = "Please Enter the valid user details";
+    }
+    if (signupError) {
+      this.setState({signupError})
       return false;
     }
+    return true;
+    // var mailformat = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    // if (inputText.match(mailformat)) {
+    //   return true;
+    // } else {
+    //   return false;
+    // }
   }
   login(e) {
-    console.log("logging up....");
-    e.preventDefault();
-    if(this.ValidateEmail(this.state.email)){
-        firebase
-        .auth()
-        .signInWithEmailAndPassword(this.state.email, this.state.password)
-        .then((u) => {
-          console.log(u);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }else {
-      history.push("/SignUp");
-    }
+      history.push("/");
   }
   signup(e) {
     console.log("signing up....");
-    if(this.ValidateEmail(this.state.email)){
     e.preventDefault();
+    const isValid = this.ValidateEmail();
+    // if(this.ValidateEmail(this.state.email)){
+      if(isValid){
     firebase
       .auth()
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
@@ -108,8 +105,10 @@ class signup extends Component {
             // onChange={this.handleChange}
             // value={this.state.password}
           />
-          <button onClick={this.login}>Login</button>
+          <ErrorMessage>{this.state.signupError}</ErrorMessage>
           <button onClick={this.signup}>Signup</button>
+          <button onClick={this.login}>Login</button>
+          
         </form>
         </Userlogin>
           </Login>
