@@ -319,6 +319,7 @@ export const Responsivemenu = styled.div`
   display: none;
 
   @media (min-width: 320px) and (max-width: 768px) {
+    width: 50%;
     background-color: rgb(68, 178, 114) !important;
     margin-bottom: 40px;
     display: block;
@@ -359,7 +360,6 @@ export const Responsivemenu = styled.div`
 `;
 export const ResponsiveIcons = styled.i`
   background-color: green;
-
   position: absolute;
   right: 0;
   background: rgba(255, 255, 255, 0.15);
@@ -462,3 +462,13 @@ export const SwitcherOptions = styled.ul`
     cursor: pointer;
   }
 `;
+export const LogoutButton = styled.button `
+padding: 0 20px;
+    border-radius: 13px;
+    border-color: ${(props) => props.color};
+    color: ${(props) =>props.color};
+     :hover {
+    color: #fff;
+    background:${(props) =>props.color};
+  }
+`

@@ -9,6 +9,7 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 import {ThemeContext} from '../context/Theme'
 import Switcher from './Search'
 import {
+  LogoutButton,
   HeaderSearch,
   ResponsiveOption,
   ToprResponsive,
@@ -55,6 +56,7 @@ class header extends Component {
     showIcon: false,
     showSearch: false,
     closeSearch: false,
+    width: '100%'
   };
   handleDropdownClick = () => {
     this.setState((state) => {
@@ -69,6 +71,7 @@ class header extends Component {
       return {
         openresponsivemenu: !state.openresponsivemenu,
         showIcon: !state.showIcon,
+        width: '0%'
       };
     });
   };
@@ -103,7 +106,7 @@ class header extends Component {
     console.log("Logout");
     firebase.auth().signOut();
   };
-
+  
   render() {
     const divStyle = {
       marginLeft: '-147px',
@@ -116,7 +119,7 @@ class header extends Component {
         <TopBar> 
           <Container>
             <Topbarmenu style={{ listStyleType: "none" }}>
-              <button onClick={this.logout}>Logout</button>
+              <LogoutButton color={darkColor} onClick={this.logout}>Logout</LogoutButton>
               <li>
                 <PhoneIcon className="fa fa-phone"></PhoneIcon>
                 (564) 123 4567
@@ -300,11 +303,11 @@ class header extends Component {
                 placeholder="to search type and hit enter"
                 onClick={this.closeSearch}
               />
-              <div>
+              <div> 
                 <AiOutlineCloseCircle />
               </div>
             </HeaderSearch>
-            <Responsivemenu onClick={this.handleReasponsiveDropdownClick}>
+            <Responsivemenu onClick={this.handleReasponsiveDropdownClick} style={{ width: this.state.width ? "100%" : "0%" }}>
               <i>
                 <GiHamburgerMenu />
               </i>
