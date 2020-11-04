@@ -26,6 +26,7 @@
     "react-scripts": "^3.4.4",
     "react-slick": "^0.27.12",
     "react-spinners": "^0.9.0",
+    "react-use": "^15.3.4",
     "reactstrap": "^8.6.0",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",

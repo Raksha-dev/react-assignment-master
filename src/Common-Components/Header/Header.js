@@ -119,7 +119,6 @@ class header extends Component {
         <TopBar> 
           <Container>
             <Topbarmenu style={{ listStyleType: "none" }}>
-              <LogoutButton color={darkColor} onClick={this.logout}>Logout</LogoutButton>
               <li>
                 <PhoneIcon className="fa fa-phone"></PhoneIcon>
                 (564) 123 4567
@@ -236,77 +235,21 @@ class header extends Component {
                     </Subdropdown>
                   )}
                 </li>
-                <li className="dropdown">
-                  <Navmenulist color={darkColor} className="current">
-                    PORTFOLIO
-                  </Navmenulist>
-                </li>
-                <li className="dropdown">
-                  <Navmenulist color={darkColor} className="current">
-                    PAGES
-                  </Navmenulist>
-                </li>
-                <li className="dropdown">
-                  <Navmenulist color={darkColor} className="current">
-                    ELEMENTS
-                  </Navmenulist>
-                </li>
-                <li className="dropdown">
-                  <Navmenulist color={darkColor} className="current">
-                    SHOP
-                  </Navmenulist>
-                </li>
-                <li className="dropdown">
-                  <Navmenulist color={darkColor} className="current">
-                    BLOG
-                  </Navmenulist>
-                </li>
+               
                 <li className="dropdown">
                   <Navmenulist href="/Contactus" color={darkColor} className="current">
                     <div>CONTACT</div>
                   </Navmenulist>
                 </li>
-     {/* ***********SEARCH ICON ******************** */}
-
-                <li className="search">
-                  <Navmenulist color={darkColor}>
-                    <NavMenuLi>
-                      <div
-                        onClick={this.handleSearch}
-                        style={{
-                          display: this.state.showSearch ? "block" : "none",
-                        }}
-                        onClick={this.closeSearch}
-                        style={{
-                          display: this.state.closeSearch ? "none" : "block",
-                        }}
-                      >
-                        <FiSearch />
-                      </div>
-                    </NavMenuLi>
+                <li className="dropdown">
+                  <Navmenulist color={darkColor} className="current">
+                  <LogoutButton color={darkColor} onClick={this.logout}>Logout</LogoutButton>
                   </Navmenulist>
                 </li>
-                <li className="search">
-                  <Navmenulist color={darkColor}>
-                    <NavMenuLi>
-                      <BiCart />
-                    </NavMenuLi>
-                  </Navmenulist>
-                </li>
+                {/* ***********SEARCH ICON ******************** */}
+               
               </NavMenu>
             </Navigation>
-            <HeaderSearch
-              style={{ display: this.state.showSearch ? "none" : "block" }}
-              style={{ display: this.state.closeSearch ? "block" : "none" }}
-            >
-              <input
-                placeholder="to search type and hit enter"
-                onClick={this.closeSearch}
-              />
-              <div> 
-                <AiOutlineCloseCircle />
-              </div>
-            </HeaderSearch>
             <Responsivemenu onClick={this.handleReasponsiveDropdownClick} style={{ width: this.state.width ? "100%" : "0%" }}>
               <i>
                 <GiHamburgerMenu />

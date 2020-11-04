@@ -7,18 +7,21 @@ import reducer from "./store/reducer/reducer";
 import Routes from "./Routes/Routes";
 import thunk from "redux-thunk";
 import ThemeContextProvider from './Common-Components/context/Theme'
-class App extends Component {
+import ScrolltoTop from './Common-Components/BacktoTop/Scroll'
+function App ()  {
   
-  render() {
+ 
     const store = createStore(reducer, applyMiddleware(thunk));
     return (
+     
       <Provider store={store}>
+         {/* <ScrolltoTop /> */}
         <ThemeContextProvider>
         <Routes />
         </ThemeContextProvider>
       </Provider>
     );
   }
-}
+
 
 export default App;

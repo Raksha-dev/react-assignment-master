@@ -4,7 +4,7 @@ import Cards from "../../Common-Components/Projects";
 import {withRouter} from 'react-router';
 import Card from "./projectcard";
 import { Data } from "./Data";
-import {CategoryButtons,Allbuttons} from './Styles/Cards';
+import {CategoryButtons,Allbuttons,CategoryButtonsall} from './Styles/Cards';
 import {ThemeContext} from '../context/Theme';
 
 export const historyComponent = withRouter(({ history, location }) => {})
@@ -25,6 +25,7 @@ class Projects extends Component {
     this.setState((state) => ({
       all: true,
     }));
+    
   }
   handleClickPEOPLE() {
     this.setState((state) => ({
@@ -56,27 +57,16 @@ class Projects extends Component {
         <Allbuttons style={{ align: "center" }}>
           <div
           >
-            <CategoryButtons color={darkColor}
-              style={{
-                backgroundColor: "transparent",
-                borderRadius: "30px",
-                border: "none",
-                padding: "10px 20px",
-              }}
+            <CategoryButtonsall color={darkColor}
+              
               onClick={this.handleClick}
             >
               ALL
-            </CategoryButtons>
+            </CategoryButtonsall>
           </div>
           <div
           >
             <CategoryButtons color={darkColor}
-              style={{
-                backgroundColor: "transparent",
-                borderRadius: "30px",
-                border: "none",
-                padding: "10px 20px",
-              }}
               onClick={this.handleClickPEOPLE}
             >
               PEOPLE
@@ -85,12 +75,6 @@ class Projects extends Component {
           <div
           >
             <CategoryButtons color={darkColor}
-              style={{
-                backgroundColor: "transparent",
-                borderRadius: "30px",
-                border: "none",
-                padding: "10px 20px",
-              }}
               onClick={this.handleClickANIMALS}
             >
               ANIMALS
@@ -99,12 +83,6 @@ class Projects extends Component {
           <div
           >
             <CategoryButtons color={darkColor}
-              style={{
-                backgroundColor: "transparent",
-                borderRadius: "30px",
-                border: "none",
-                padding: "10px 20px",
-              }}
               onClick={this.handleClickOTHERS}
             >
               OTHERS

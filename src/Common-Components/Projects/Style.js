@@ -1,7 +1,7 @@
 import styled from "styled-components";
 export const Card = styled.div`
   position: relative;
-  width: 100%;
+  /* max-width: 100%; */
   &:hover .image {
     opacity: 0.3;
   }
@@ -17,15 +17,21 @@ export const InactiveCard = styled(Card)`
 `;
 export const Image = styled.img`
   opacity: 1;
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
   transition: 0.5s ease;
   backface-visibility: hidden;
-  @media (min-width: 320px) and (max-width: 375px) {
-    width: 94% !important;
+  /* @media (min-width: 320px) and (max-width: 768px) {
+    width
+  } */
+  @media (max-width: 320px) { 
+    width: 94% !important ;
+  }
+  @media (min-width: 375px) {
+    width: 107% !important;
   }
   @media (min-width: 425px) {
-    width: 100% !important;
+    width: 120% !important;
   }
 `;
 export const Middle = styled.div`

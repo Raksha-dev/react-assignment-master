@@ -100,6 +100,8 @@ export const Columntwo = styled.ul`
 export const Imageeddge = styled.div`
 @media (min-width: 320px) and (max-width: 768px) {
   display: none;
+  margin-top: 0;
+  height: 0vw;
 }
   width: 100%;
   background-color: #f8f8f8;

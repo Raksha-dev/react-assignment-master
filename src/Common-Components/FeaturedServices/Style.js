@@ -37,11 +37,11 @@ export const FeaturedServicesContent = styled.div `
     padding-left: 105px;
     position: relative;
     z-index: 20;
-    @media (min-width: 320px) and (max-width: 425px){
+    @media (min-width: 320px) and (max-width: 768px){
         background-color: #f5f5f5;
     }
-    @media(max-width: 768px){
-        /* width: 85%; */
+    @media(min-width: 768px) and (max-width: 768px){
+        width: 85%;
     }
 `
 export const FeaturedServicesAlignment = styled.div `

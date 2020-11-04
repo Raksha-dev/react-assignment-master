@@ -39,16 +39,40 @@ export const Column = styled.div`
   }
 `;
 export const CategoryButtons = styled.button`
+  font-weight: 700;
+  background-color: transparent;
+  border-radius: 30px;
+  border: none;
+  padding: 10px 20px;
   outline: none;
   margin: 0 auto;
   max-width: 1240px;
-  @media (min-width: 320px) and (max-width: 475px) {
-    margin-top: -30px;
-  }
   :hover {
     background: ${(props) => props.color};
   }
+  @media (min-width: 320px) and (max-width: 475px) {
+    margin-top: -30px;
+  }
+  
 `;
+export const CategoryButtonsall = styled.button`
+  font-weight: 700;
+  background-color: transparent;
+  border-radius: 30px;
+  border: none;
+  padding: 10px 20px;
+  outline: none;
+  margin: 0 auto;
+  max-width: 1240px;
+  /* background: ${(props) => props.color}; */
+  :hover {
+    background: ${(props) => props.color};
+  }
+  @media (min-width: 320px) and (max-width: 475px) {
+    margin-top: -30px;
+  }
+`
+
 export const Row = styled.div`
   display: grid;
   grid-template-columns: repeat(4, auto);
@@ -95,9 +119,14 @@ export const Allbuttons = styled.div`
   max-width: 1240px;
   margin: 0 auto;
   display: flex;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   justify-content: center;
   &div:hover {
     background-color: green;
+  }
+  @media (min-width: 320px) and (max-width: 425px) {
+
+    display: block;
+    text-align: center;
   }
 `;
