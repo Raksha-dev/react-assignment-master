@@ -1,10 +1,9 @@
-// import * as actionTypes from '../actions/Actiontypes';
-
-const initialState = {
-
-};
-const reducer = (state = initialState, action) => {
-
-};
-
-export default reducer;
+const userReducer = (state = {}, action) => {
+    switch(action.type) {
+        case "ADD_USER":
+        return{...state, userId: action.payload};
+        default:
+        return state;
+    }
+}
+export default userReducer;

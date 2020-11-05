@@ -15,6 +15,7 @@ class Projects extends Component {
     this.state = {
       type: "PEOPLE",
       all: true,
+      activeButton: false
     };
     this.handleClickPEOPLE = this.handleClickPEOPLE.bind(this);
     this.handleClickANIMALS = this.handleClickANIMALS.bind(this);
@@ -24,6 +25,7 @@ class Projects extends Component {
   handleClick() {
     this.setState((state) => ({
       all: true,
+      bgColor: "red"
     }));
     
   }
@@ -58,15 +60,14 @@ class Projects extends Component {
           <div
           >
             <CategoryButtonsall color={darkColor}
-              
-              onClick={this.handleClick}
             >
+              
               ALL
             </CategoryButtonsall>
           </div>
           <div
           >
-            <CategoryButtons color={darkColor}
+            <CategoryButtons color={darkColor} 
               onClick={this.handleClickPEOPLE}
             >
               PEOPLE
@@ -93,8 +94,6 @@ class Projects extends Component {
           {Data.map((item, index) => {
             const images = require.context("../../Assets/Images/", true);
             let img = images("./" + item.imageName);
-            console.log(this.state.type);
-            console.log(item.type);
             if (this.state.all || this.state.type === item.type)
               return (
                 <Cards.Column key={index} onClick={() => history.push("/View")}>
