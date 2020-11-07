@@ -1,44 +1,53 @@
-
 .rec.rec-arrow {
     border-radius: 0%;
 }
+
 .rec.rec-arrow-right:hover {
     color: black;
     background-color: #ffffff !important;
 }
+
 .rec.rec-arrow-left:hover {
     color: black;
     background-color: #ffffff !important;
 }
+
 .rec.rec-slider-container {
     margin: 0;
 }
+
 .rec.rec-pagination {
     position: relative;
-    margin-top: -29px;  
+    margin-top: -29px;
 }
+
 .rec-dot_active {
     background-color: white;
 }
+
 .rec.rec-dot_active {
     height: 16px;
     width: 19px;
 }
+
 .rec.rec-dot {
     height: 16px;
     width: 19px;
 }
+
 .rec.rec-dot {
     width: 5px;
     height: 10px;
-    background-color:rgb(255,255,255);
-    box-shadow: 0 0 1px 3px rgb(255,255,255);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 1px 3px rgb(255, 255, 255);
 }
+
 .rec.rec-dot_active {
-    background-color:rgb(255,255,255);
-    box-shadow: 0 0 1px 3px rgb(255,255,255);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 1px 3px rgb(255, 255, 255);
 }
+
 .rec.rec-dot_active:hover {
     /* background-color:rgb(255,255,255); */
-    box-shadow: 0 0 1px 3px rgb(255,255,255);
+    box-shadow: 0 0 1px 3px rgb(255, 255, 255);
 }

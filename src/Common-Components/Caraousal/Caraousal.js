@@ -3,8 +3,8 @@ import * as classes from "./header.css";
 import Carousel from "react-elastic-carousel";
 import SlideIamgeone from "../../Assets/Images/slide-01.jpg";
 import SlideIamgetwo from "../../Assets/Images/slide-03.jpg";
-import {SubmitButton } from "./Style";
-import {ThemeContext} from '../context/Theme'
+import { SubmitButton } from "./Style";
+import { ThemeContext } from "../context/Theme";
 
 import {
   StyledDiv,
@@ -15,7 +15,7 @@ import {
 } from "./Style";
 
 class banner extends Component {
-  static contextType=ThemeContext;
+  static contextType = ThemeContext;
 
   state = {
     items: [

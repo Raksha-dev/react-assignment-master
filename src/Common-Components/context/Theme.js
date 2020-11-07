@@ -11,7 +11,7 @@ class ThemeProvider extends Component {
       ...newstate,
     });
   };
-  
+
   render() {
     return (
       <ThemeContext.Provider
