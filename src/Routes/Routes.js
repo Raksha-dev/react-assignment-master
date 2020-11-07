@@ -12,7 +12,6 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link,
     Redirect
   } from "react-router-dom";
 export default class Routes extends Component {
@@ -24,7 +23,6 @@ export default class Routes extends Component {
   }
   componentDidMount() {
     this.authListener();
-    console.log(this.state.user);
   }
   authListener() {
     firebase.auth().onAuthStateChanged((user) => {
@@ -34,7 +32,6 @@ export default class Routes extends Component {
         this.setState({ user: null });
       }
     });
-  console.log(this.state.user);
   }
   render() {
     return (

@@ -111,7 +111,6 @@ class header extends Component {
     const divStyle = {
       marginLeft: '-147px',
     };
-    console.log(this.context);
     const { darkColor } = this.context;
     return (
       <>

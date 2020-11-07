@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { FiSettings } from "react-icons/fi";
-import { ThemeContext } from "../../Common-Components/context/Theme";
 import classes from "./style.css";
 import {
   SwitcherA,

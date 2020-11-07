@@ -15,7 +15,6 @@ class services extends Component {
     static contextType=ThemeContext;
 
     render () {
-        console.log(this.context);
     const { darkColor } = this.context;
         return (
             <>

@@ -49,7 +49,6 @@ class Projects extends Component {
 
   render() {
     const { location, history } = this.props
-    console.log(this.context);
     const { darkColor } = this.context;
     return (
       <Cards>

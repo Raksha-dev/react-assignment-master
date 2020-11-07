@@ -3,7 +3,7 @@ import * as classes from "./header.css";
 import Carousel from "react-elastic-carousel";
 import SlideIamgeone from "../../Assets/Images/slide-01.jpg";
 import SlideIamgetwo from "../../Assets/Images/slide-03.jpg";
-import { Messagebox,SubmitButton } from "./Style";
+import {SubmitButton } from "./Style";
 import {ThemeContext} from '../context/Theme'
 
 import {
@@ -24,7 +24,6 @@ class banner extends Component {
     ],
   };
   render() {
-    console.log(this.context);
     const { darkColor } = this.context;
     const { items } = this.state;
     return (
@@ -50,7 +49,7 @@ class banner extends Component {
         >
           {items.map((item) => (
             <StyledDiv key={item.id} alt="image">
-              <img src={item.url}></img>
+              <img src={item.url} alt="carousel"></img>
               <Carouselcontent>
                 <h2>Creative Essence</h2>
                 <p>

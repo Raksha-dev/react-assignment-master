@@ -27,10 +27,10 @@ export const Image = styled.img`
   @media (max-width: 320px) { 
     width: 94% !important ;
   }
-  @media (min-width: 375px) {
+  @media (min-width: 375px) and (max-width: 375px) {
     width: 107% !important;
   }
-  @media (min-width: 425px) {
+  @media (min-width: 425px) and (max-width: 425px){
     width: 120% !important;
   }
 `;

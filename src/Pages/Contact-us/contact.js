@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import firebase from "./firebase";
 import { Inputform } from "./Style";
-import { Messagebox, SubmitButton, ShowMessage } from "./Style";
+import {SubmitButton, ShowMessage } from "./Style";
 import { ThemeContext } from "../../Common-Components/context/Theme";
 
 const Contact = (props) => {

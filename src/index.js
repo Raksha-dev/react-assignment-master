@@ -3,7 +3,7 @@ import '../node_modules/font-awesome/css/font-awesome.min.css';
 import { BrowserRouter} from "react-router-dom";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware} from "redux";
-import reducer from "./store/reducer/reducer";
+import reducer from "./Sagas/Reducers";
 import thunk from 'redux-thunk';
 import ReactDOM from 'react-dom';
 import './Styles/index.css';
