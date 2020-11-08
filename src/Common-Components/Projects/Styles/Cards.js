@@ -4,8 +4,6 @@ export const Container = styled.div`
   color: #192a56;
   background-color: #f8f8f8;
   padding-bottom: 60px;
-  @media (max-width: 1000px) {
-  }
 `;
 export const Wrapper = styled.div`
   display: flex;
@@ -25,17 +23,17 @@ export const Column = styled.div`
   ::before {
     background: green;
   }
-  @media (min-width: 320px) and (max-width: 375px) {
-    margin: 0px -21px 41px !important;
-    padding-bottom: 35px;
+  @media (min-width: 320px) and (max-width: 320px) {
+    width: 320px;
   }
-  @media (max-width: 425px) {
-    margin: 0px !important;
-    padding-bottom: 35px;
+  @media (min-width: 375px) and (max-width: 375px) {
+    width: 375px;
+  }
+  @media (min-width: 425px) and (max-width: 425px) {
+    width: 425px;
   }
   @media (min-width: 768px) and (max-width: 768px) {
-    padding-bottom: 20px;
-    margin: 0px !important;
+    width: 383px;
   }
 `;
 export const CategoryButtons = styled.button`
@@ -50,10 +48,6 @@ export const CategoryButtons = styled.button`
   :hover {
     background: ${(props) => props.color};
   }
-  @media (min-width: 320px) and (max-width: 475px) {
-    margin-top: -30px;
-  }
-  
 `;
 export const CategoryButtonsall = styled.button`
   font-weight: 700;
@@ -64,14 +58,10 @@ export const CategoryButtonsall = styled.button`
   outline: none;
   margin: 0 auto;
   max-width: 1240px;
-  /* background: ${(props) => props.color}; */
   :hover {
     background: ${(props) => props.color};
   }
-  @media (min-width: 320px) and (max-width: 475px) {
-    margin-top: -30px;
-  }
-`
+`;
 
 export const Row = styled.div`
   display: grid;
@@ -79,20 +69,11 @@ export const Row = styled.div`
   grid-gap: 0px;
   width: 0%;
 
-  @media (max-width: 1346px) {
-    grid-template-columns: repeat(2, auto);
-    grid-gap: 0px;
-  }
-  @media (max-width: 920px) {
+  @media (min-width: 320px) and (max-width: 425px) {
     grid-template-columns: repeat(1, auto);
-    grid-gap: 0px;
   }
   @media (min-width: 768px) and (max-width: 768px) {
     grid-template-columns: repeat(2, auto);
-    grid-gap: 0px;
-  }
-  @media (min-width: 375px) {
-    padding-bottom: 20px;
   }
 `;
 export const Link = styled.a`
@@ -111,9 +92,6 @@ export const Title = styled.h3`
   font-size: 28px;
   margin-bottom: 35px !important;
   margin-top: 70px !important;
-  @media (min-width: 320px) and (max-width: 425px) {
-    padding-bottom: 40px;
-  }
 `;
 export const Allbuttons = styled.div`
   max-width: 1240px;
@@ -125,7 +103,6 @@ export const Allbuttons = styled.div`
     background-color: green;
   }
   @media (min-width: 320px) and (max-width: 425px) {
-
     display: block;
     text-align: center;
   }

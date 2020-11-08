@@ -17,17 +17,14 @@ margin-bottom: 48px;
 }
 `
 export const BottomCarousel = styled.div `
-@media (min-width:320px) and (max-width: 425px) {
+@media (min-width:320px) and (max-width: 768px) {
     display: none;
 }
 `
 export const Responsivecarousel = styled.div `
 display: none;
-@media (min-width: 320px) and (max-width: 425px) {
+@media (min-width: 320px) and (max-width: 768px) {
     display: block;
     width: 92%;
-}
-@media(max-width: 768px) {
-    width: 96%;
 }
 `

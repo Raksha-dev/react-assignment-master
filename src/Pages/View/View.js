@@ -1,40 +1,32 @@
 import React, { Component } from "react";
-import Header from '../../Common-Components/Header/Header'
+import Header from "../../Common-Components/Header/Header";
 import Footer from "../../Common-Components/Footer/Footer";
-import Singleproject from '../../Assets/Images/single-project-01a.jpg'
 import { RiShip2Line, RiUserSearchLine } from "react-icons/ri";
 import { FaBoxOpen } from "react-icons/fa";
 import { GiPalmTree } from "react-icons/gi";
-import {withRouter} from 'react-router';
-
+import { withRouter } from "react-router";
 
 import {
   Image,
   Imagebg,
   Portfoilocontent,
   Projectname,
-  Row,
+  RowOne,
   Columnone,
   Columntwo,
-  Imageeddge,
-  Imageeddgecontent,
-  Imageeddgebg,
-  Imageeddgebottom,
-  Imageeddgebgbottom,
-  Imageeddgecontentbottom,
-  Shipicons,
-  Environmentalicons,
-  ShipiconsContentone,
-  ShipiconsContentwo,
-  EnvironmentaliconsContentone,
-  EnvironmentaliconsContentwo
+  ImageEdge,
+  ImageEdgeContent,
+  EdgeBg,
+  ImageEdgeBottom,
+  Grid,
+  IconBoxOne,
+  EdgeBgBottom,
 } from "./Style";
 class View extends Component {
   render() {
     return (
       <>
-      
-      <Header />
+        <Header />
         <Image style={StyleSheet.absoluteFillObject} resizeMode="cover">
           <div className="bg-color"></div>
           <Imagebg>
@@ -44,7 +36,7 @@ class View extends Component {
         <Portfoilocontent>
           <Projectname>
             <h4>Project Name</h4>
-            <Row>
+            <RowOne>
               <Columnone>
                 <p>
                   Maecenas molestie fermentum luctus. Cras lacinia molestie
@@ -77,11 +69,12 @@ class View extends Component {
                   Kitchens, Carpentry
                 </li>
               </Columntwo>
-            </Row>
+            </RowOne>
           </Projectname>
         </Portfoilocontent>
-        <Imageeddge>
-          <Imageeddgecontent>
+
+        <ImageEdge>
+          <ImageEdgeContent>
             <h2>
               Don't Hestitate,
               <br />
@@ -92,43 +85,57 @@ class View extends Component {
               among the conflicting requirements of novelty, simplicity,
               elegance and function.
             </p>
-          </Imageeddgecontent>
-          <Imageeddgebg>
-            <img src={Singleproject}  alt="imageone" />
-          </Imageeddgebg>
-        </Imageeddge>
-        <Imageeddgebottom>
-          <Imageeddgebgbottom>
-            <img src={Singleproject} alt="image1" />
-          </Imageeddgebgbottom>
-          <Imageeddgecontentbottom>
-            <Shipicons alt="shipicon">
-              <ShipiconsContentone>
-                <i><RiShip2Line /> </i>
-                <h4>Visual Identity</h4>
-                <p>Nunc ultricies porttitor est, ut rutrum ante. Vivamus interdum sodales sem. In ultrices augue eget.</p>
-              </ShipiconsContentone >
-              <ShipiconsContentwo>
-                <i><FaBoxOpen /> </i>
-                <h4>Package Design</h4>
-                <p>Nunc ultricies porttitor est, ut rutrum ante. Vivamus interdum sodales sem. In ultrices augue eget.</p>
-              </ShipiconsContentwo>
-            </Shipicons>
-            <Environmentalicons>
-              <EnvironmentaliconsContentone>
-              <i><GiPalmTree /> </i>
+          </ImageEdgeContent>
+          <EdgeBg />
+        </ImageEdge>
+        <ImageEdgeBottom>
+          <Grid>
+            <IconBoxOne>
+              <i>
+                <RiShip2Line />{" "}
+              </i>
+              <h4>Visual Identity</h4>
+              <p>
+                Nunc ultricies porttitor est, ut rutrum ante. Vivamus interdum
+                sodales sem. In ultrices augue eget.
+              </p>
+            </IconBoxOne>
+
+            <IconBoxOne>
+              <i>
+                <FaBoxOpen />{" "}
+              </i>
+              <h4>Package Design</h4>
+              <p>
+                Nunc ultricies porttitor est, ut rutrum ante. Vivamus interdum
+                sodales sem. In ultrices augue eget.
+              </p>
+            </IconBoxOne>
+
+            <IconBoxOne>
+              <i>
+                <GiPalmTree />{" "}
+              </i>
               <h4>Ecologic Paper</h4>
-                <p>Nunc ultricies porttitor est, ut rutrum ante. Vivamus interdum sodales sem. In ultrices augue eget.</p>
-              </EnvironmentaliconsContentone>
-              <EnvironmentaliconsContentwo>
-              <i><RiUserSearchLine /> </i>
+              <p>
+                Nunc ultricies porttitor est, ut rutrum ante. Vivamus interdum
+                sodales sem. In ultrices augue eget.
+              </p>
+            </IconBoxOne>
+
+            <IconBoxOne>
+              <i>
+                <RiUserSearchLine />{" "}
+              </i>
               <h4>Audit and Assurance</h4>
-                <p>Nunc ultricies porttitor est, ut rutrum ante. Vivamus interdum sodales sem. In ultrices augue eget.</p>
-              </EnvironmentaliconsContentwo>
-            </Environmentalicons>
-          </Imageeddgecontentbottom>
-        </Imageeddgebottom>
-        
+              <p>
+                Nunc ultricies porttitor est, ut rutrum ante. Vivamus interdum
+                sodales sem. In ultrices augue eget.
+              </p>
+            </IconBoxOne>
+          </Grid>
+          <EdgeBgBottom />
+        </ImageEdgeBottom>
         <Footer />
       </>
     );

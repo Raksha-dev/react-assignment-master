@@ -13,9 +13,7 @@ export const FeaturedServicesWrapper = styled.div `
         background: ${(props) => props.color};
     }
     @media (min-width: 320px) and (max-width: 768px) {
-        display: block;
-        margin-left: 15px;
-        margin-right: 15px;
+        grid-template-columns: repeat(1,auto);
     }
 `
 export const FeaturedServices = styled.a `
@@ -26,9 +24,6 @@ export const FeaturedServices = styled.a `
     padding: 40px;
     position: relative;
     overflow: hidden;
-    @media (min-width: 320px) and (max-width: 768px) {
-        padding: 0px;
-    }
 `
 export const FeaturedServicesContent = styled.div `
     display: table;
@@ -36,10 +31,4 @@ export const FeaturedServicesContent = styled.div `
     padding-left: 105px;
     position: relative;
     z-index: 20;
-    @media (min-width: 320px) and (max-width: 768px){
-        background-color: #f5f5f5;
-    }
-    @media(min-width: 768px) and (max-width: 768px){
-        width: 85%;
-    }
 `

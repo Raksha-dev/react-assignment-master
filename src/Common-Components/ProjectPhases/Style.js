@@ -18,7 +18,7 @@ export const ProjectphasesContent = styled.div `
     margin-bottom: 40px;
     border-bottom: 1px solid #666;
     padding-bottom: 20px;
-    @media (min-width:320px) and (max-width: 425px) {
+    @media (min-width:320px) and (max-width: 768px) {
         margin-left: 15px;
         max-width: 88%;
     }
@@ -28,13 +28,13 @@ display: flex;
 text-align: center;
 max-width: 1240px;
 margin: 0 auto;
-@media (min-width:320px) and (max-width: 425px) {
+@media (min-width:320px) and (max-width: 768px) {
 display: block;
     }
 `
 export const IconOne = styled.div ``
 export const PulseIcon = styled.div `
-margin-top: 43px
+margin-top: 43px;
 `
 export const Responsiveicons = styled.div `
 

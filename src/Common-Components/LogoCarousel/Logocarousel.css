@@ -9,21 +9,8 @@
 .slick-slide img {
     outline: none;
 }
-/* .slick-dots {
-    border-radius: 4px;
-    height: 4px;
-    width: 35px;
-    background-color:#6b6a67;
-    box-shadow: none;
-  }
-  .slick-active button{
-    border-radius: 4px;
-    height: 4px;
-    width: 35px;
-    background-color:#6b6a67;
-    box-shadow: none;
-  } */
+
   .slick-list {
-    margin-left: 56px;
+    text-align: -webkit-center;
   }
   

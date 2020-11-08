@@ -151,7 +151,6 @@ class header extends Component {
               <SocialIcons>
                 <li>
                   <FacebookIcon className="fa fa-facebook">
-                    {/* <i className="icon-facebook"></i> */}
                   </FacebookIcon>
                 </li>
                 <li>
@@ -249,7 +248,7 @@ class header extends Component {
                
               </NavMenu>
             </Navigation>
-            <Responsivemenu onClick={this.handleReasponsiveDropdownClick} style={{ width: this.state.width ? "100%" : "0%" }}>
+            {/* <Responsivemenu onClick={this.handleReasponsiveDropdownClick} style={{ width: this.state.width ? "100%" : "0%" }}>
               <i>
                 <GiHamburgerMenu />
               </i>
@@ -295,7 +294,7 @@ class header extends Component {
                   <GrFormClose />
                 </div>
               </ResponsiveIcons>
-            </Responsivemenu>
+            </Responsivemenu> */}
           </MainHeaderContainer>
           <Switcher context={this.context} />
         </Subheader>

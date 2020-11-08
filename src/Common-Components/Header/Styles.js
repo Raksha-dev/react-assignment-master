@@ -101,7 +101,7 @@ export const SocialIcons = styled.ul`
   & li {
     display: inline;
   }
-  @media (min-width: 320px) and (max-width: 768px) {
+  @media (min-width: 320px) and (max-width: 425px) {
     margin-left: -31px;
     margin-top: 15px;
   }
@@ -198,7 +198,7 @@ export const Topbarmenu = styled.div`
   margin: 0;
   padding-top: 5px;
   display: inline-flex;
-  @media (min-width: 320px) and (max-width: 768px) {
+  @media (min-width: 320px) and (max-width: 425px) {
     display: block;
   }
   & li {
@@ -216,9 +216,8 @@ export const Topbarmenu = styled.div`
 `;
 export const TopbarmenuSocialIcons = styled.div`
   margin: 0;
-  /* padding: 8px 0; */
   display: inline-flex;
-  @media (max-width: 768px) {
+  @media (max-width: 425px) {
     margin-top: -14px;
   }
 `;
@@ -232,7 +231,7 @@ export const MainHeader = styled.div`
   & img {
     margin-left: 20px;
   }
-  @media (min-width: 320px) and (max-width: 768px) {
+  @media (min-width: 320px) and (max-width: 375px) {
     width: 100%;
     max-width: 1240px;
     text-align: center;
@@ -249,7 +248,7 @@ export const MainHeaderContainer = styled.div`
   justify-content: space-between;
   max-width: 1240px;
   margin: 0 auto;
-  @media (min-width: 320px) and (max-width: 768px) {
+  @media (min-width: 320px) and (max-width: 375px) {
     display: block;
   }
 `;
@@ -259,15 +258,10 @@ export const NavMenu = styled.ul`
   font-weight: 600;
   display: flex;
   opacity: 1;
-  padding: 0;
   list-style: none;
   float: left;
-  width: 100%;
   margin: 0;
   z-index: 99;
-  @media (min-width: 320px) and (max-width: 768px) {
-    display: none;
-  }
 `;
 export const Navmenulist = styled.a`
   font-weight: bold;
@@ -316,8 +310,8 @@ export const Subdropdown = styled.ul`
 
 export const Responsivemenu = styled.div`
   display: none;
-
-  @media (min-width: 320px) and (max-width: 768px) {
+  
+  @media (min-width: 320px) and (max-width: 425px) {
     width: 50%;
     background-color: rgb(68, 178, 114) !important;
     margin-bottom: 40px;
@@ -372,7 +366,7 @@ export const ResponsiveIcons = styled.i`
   cursor: pointer;
 `;
 export const ToprResponsive = styled.li`
-  @media (min-width: 375px) and (max-width: 768px) {
+  @media (min-width: 375px) and (max-width: 425px) {
     margin-left: 160px !important;
     margin-top: -28px !important;
   }
