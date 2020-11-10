@@ -33,7 +33,6 @@ class signup extends Component {
     let emailError = "";
     if (!email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g)) {
       this.setState({ emailError: "Please Enter the valid username!" });
-      console.log("hy");
       return true;
     } else {
       this.setState({ emailError: "" });
@@ -55,9 +54,13 @@ class signup extends Component {
   ValidateconfirmPassword(confirmpassword) {
     let confirmPasswordError = "";
     if (
-      !confirmpassword.match(/(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+-]).{6}/)
+      !confirmpassword.match(
+        /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+-]).{6}/
+      )
     ) {
-      this.setState({ confirmPasswordError: "Please enter a valid Confirm Password!" });
+      this.setState({
+        confirmPasswordError: "Please enter a valid Confirm Password!",
+      });
       return true;
     } else {
       this.setState({ confirmPasswordError: "" });
@@ -66,9 +69,7 @@ class signup extends Component {
   }
   ValidateFullname(fullname) {
     let fullnameError = "";
-    if (
-      !fullname.match(/[a-zA-Z]/)
-    ) {
+    if (!fullname.match(/[a-zA-Z]/)) {
       this.setState({ fullnameError: "Please Enter the valid name!" });
       return true;
     } else {
@@ -87,8 +88,7 @@ class signup extends Component {
       this.setState({
         signupError: "Please Enter the valid use details",
       });
-    }
-    else {
+    } else {
       firebase
         .auth()
         .createUserWithEmailAndPassword(this.state.email, this.state.password)
@@ -135,7 +135,7 @@ class signup extends Component {
       });
       this.ValidateconfirmPassword(value);
       this.setState({ loginError: "" });
-  } 
+    }
   }
   render() {
     const { location, history } = this.props;
@@ -148,9 +148,9 @@ class signup extends Component {
               <Userlogin>
                 <form>
                   <input
-                  name="fullname"
-                  type="fullname"
-                  id="fullname"
+                    name="fullname"
+                    type="fullname"
+                    id="fullname"
                     placeholder="FullName"
                     onChange={(e) => this.handleChangefullname(e.target.value)}
                     value={this.state.fullname}
@@ -177,7 +177,6 @@ class signup extends Component {
                   <input
                     name="confirmpassword"
                     type="confirmpassword"
-                    // onChange={this.handleChange}
                     id="confirmpassword"
                     placeholder="Confirm Password"
                     onChange={(e) => this.handleConfirm(e.target.value)}

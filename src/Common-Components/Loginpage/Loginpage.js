@@ -30,10 +30,8 @@ class login extends Component {
     let emailError = "";
     if (!email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g)) {
       this.setState({ emailError: "Please Enter the valid username" });
-      console.log("hy");
       return true;
     } else {
-      console.log("hey");
       this.setState({ emailError: "" });
       return false;
     }
@@ -45,10 +43,8 @@ class login extends Component {
       !password.match(/(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+-]).{6}/)
     ) {
       this.setState({ passwordError: "Please Enter the valid password" });
-      console.log("oye");
       return true;
     } else {
-      console.log("lalal");
       this.setState({ passwordError: "" });
       return false;
     }

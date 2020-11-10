@@ -12,7 +12,8 @@ import { requestApiData } from "../../Sagas/Actions/actions";
 import {
   FeaturedServicesWrapper,
   FeaturedServices,
-  FeaturedServicesContent,FeaturedServicesAlignment
+  FeaturedServicesContent,
+  FeaturedServicesAlignment,
 } from "./styles";
 class services extends Component {
   static contextType = ThemeContext;
@@ -35,9 +36,11 @@ class services extends Component {
             <FeaturedServices key={data.title}>
               <FeaturedServicesContent>
                 <FeaturedServicesAlignment>
-                <i><AiOutlineUserAdd /></i>
-                <h4>{data.title}</h4>
-                <p>{data.descrition}</p>
+                  <i>
+                    <AiOutlineUserAdd />
+                  </i>
+                  <h4>{data.title}</h4>
+                  <p>{data.descrition}</p>
                 </FeaturedServicesAlignment>
               </FeaturedServicesContent>
             </FeaturedServices>
@@ -56,3 +59,5 @@ const mapDispatchToProps = (dispatch) =>
   bindActionCreators({ requestApiData }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(services);
+
+//bindActionCreators turns an object whose values are action creators, into an object with the same keys, but with every action creator wrapped into a dispatch call so they may be invoked directly//
