@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import React, { } from "react";
 import Header from "../../Common-Components/Header/Header";
 import Footer from "../../Common-Components/Footer/Footer";
 import Mapedgeimage from "../../Assets/Images/download.jpg";
@@ -7,23 +6,27 @@ import { FiPhoneCall } from "react-icons/fi";
 import { FaXRay } from "react-icons/fa";
 import { BiGlobe } from "react-icons/bi";
 import { AiOutlineMail } from "react-icons/ai";
-import { Containerimg } from "./Style";
-import { Contactimg } from "./Style";
-import { Mapimage } from "./Style";
-import { Contactusimage } from "./Style";
-import { Officeaddress } from "./Style";
-import { Contactform } from "./Style";
-import { Container } from "./Style";
-import { Contactlist } from "./Style";
-import { Phoneicon } from "./Style";
-import { Containertwo,Ouroffice,ContactEmail } from "./Style";
-import {ThemeContext} from '../../Common-Components/context/Theme'
-import Contact from './contact';
+import {
+  Containerimg,
+  Contactimg,
+  Mapimage,
+  Contactusimage,
+  Officeaddress,
+  Contactform,
+  Container,
+  Contactlist,
+  Phoneicon,
+  Containertwo,
+  Ouroffice,
+  ContactEmail,
+} from "./Style";
+import { ThemeContext } from "../../Common-Components/context/Theme";
+import Contact from "./contact";
 class contactus extends Component {
   static contextType = ThemeContext;
-  render () {
+  render() {
     const { darkColor } = this.context;
-    
+
     return (
       <>
         <Header />
@@ -48,46 +51,61 @@ class contactus extends Component {
               e-tailers. Objectively seize scalable metrics whereas proactive
               e-services.
             </p>
-            <Contactlist style={{listStyleType: "none"}}>
-                <li>
-                    <i><FiPhoneCall /></i>
-                    <Phoneicon>
-                    <strong>Phone:</strong>
-                    <span>(123) 123-456 </span>
-                    </Phoneicon>
-                </li>
-                <li>
-                    <i><FaXRay /></i>
-                    <Phoneicon>
-                    <strong>Phone:</strong>
-                    <span>(123) 123-456 </span>
-                    </Phoneicon>
-                </li>
-                <li>
-                    <i><BiGlobe /></i>
-                    <Phoneicon>
-                    <strong>Phone:</strong>
-                    <span><ContactEmail color={darkColor}>www.example.com</ContactEmail> </span>
-                    </Phoneicon>
-                </li>
-                <li>
-                    <i><AiOutlineMail /></i>
-                    <Phoneicon>
-                    <strong>Phone:</strong>
-                    <span><ContactEmail color={darkColor}>office@example.com</ContactEmail> </span>
-                    </Phoneicon>
-                </li>
-                
+            <Contactlist style={{ listStyleType: "none" }}>
+              <li>
+                <i>
+                  <FiPhoneCall />
+                </i>
+                <Phoneicon>
+                  <strong>Phone:</strong>
+                  <span>(123) 123-456 </span>
+                </Phoneicon>
+              </li>
+              <li>
+                <i>
+                  <FaXRay />
+                </i>
+                <Phoneicon>
+                  <strong>Phone:</strong>
+                  <span>(123) 123-456 </span>
+                </Phoneicon>
+              </li>
+              <li>
+                <i>
+                  <BiGlobe />
+                </i>
+                <Phoneicon>
+                  <strong>Phone:</strong>
+                  <span>
+                    <ContactEmail color={darkColor}>
+                      www.example.com
+                    </ContactEmail>{" "}
+                  </span>
+                </Phoneicon>
+              </li>
+              <li>
+                <i>
+                  <AiOutlineMail />
+                </i>
+                <Phoneicon>
+                  <strong>Phone:</strong>
+                  <span>
+                    <ContactEmail color={darkColor}>
+                      office@example.com
+                    </ContactEmail>{" "}
+                  </span>
+                </Phoneicon>
+              </li>
             </Contactlist>
           </Container>
-        <Containertwo>
-          <Contact color={darkColor} />
-        </Containertwo>
+          <Containertwo>
+            <Contact color={darkColor} />
+          </Containertwo>
         </Contactform>
         <Footer />
       </>
     );
   }
-  }
+}
 
 export default contactus;

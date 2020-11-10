@@ -17,7 +17,6 @@ class login extends Component {
     super(props);
     this.login = this.login.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    // this.signup = this.signup.bind(this);
     this.state = {
       email: "",
       password: "",
@@ -26,38 +25,52 @@ class login extends Component {
       loginError: "",
     };
   }
-  ValidateEmail() {
-    // var mailformat = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-    let loginError = "";
-    if (!this.state.email.includes("@")) {
-      loginError = "Please Enter the valid username and password";
-    }
-    if (loginError) {
-      this.setState({ loginError });
+  ValidateEmail(email) {
+    console.log(email);
+    let emailError = "";
+    if (!email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g)) {
+      this.setState({ emailError: "Please Enter the valid username" });
+      console.log("hy");
+      return true;
+    } else {
+      console.log("hey");
+      this.setState({ emailError: "" });
       return false;
     }
-    return true;
-    // let passwordError= "";
-    // if (inputText.match(mailformat)) {
-    //   return true;
-    // } else {
-
-    //   return false;
-
-    // }
+  }
+  ValidatePassword(password) {
+    console.log(password);
+    let passwordError = "";
+    if (
+      !password.match(/(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+-]).{6}/)
+    ) {
+      this.setState({ passwordError: "Please Enter the valid password" });
+      console.log("oye");
+      return true;
+    } else {
+      console.log("lalal");
+      this.setState({ passwordError: "" });
+      return false;
+    }
   }
   login(e) {
     e.preventDefault();
     const { location, history } = this.props;
     console.log("logging in....");
-    const isValid = this.ValidateEmail();
-    if (isValid) {
+    if (this.state.email == "" && this.state.password == "") {
+      this.setState({
+        loginError: "Please Enter the valid username and password",
+      });
+    }
+    else {
       firebase
         .auth()
         .signInWithEmailAndPassword(this.state.email, this.state.password)
         .then((u) => {
           console.log(u);
-          history.push("/Home");
+          setTimeout(() => {
+            history.push(`/Home`);
+          }, 2000);
         })
         .catch((err) => {
           console.log(err);
@@ -67,11 +80,22 @@ class login extends Component {
   signup(e) {
     e.preventDefault();
   }
-  handleChange(e) {
-    console.log(e);
+  handleChange(value) {
+    console.log(value);
     this.setState({
-      [e.target.name]: e.target.value,
+      email: value,
     });
+    this.ValidateEmail(value);
+    this.setState({ loginError: "" });
+  }
+
+  handleChangeclick(value) {
+    console.log(value);
+    this.setState({
+      password: value,
+    });
+    this.ValidatePassword(value);
+    this.setState({ loginError: "" });
   }
   render() {
     const { location, history } = this.props;
@@ -89,19 +113,19 @@ class login extends Component {
                     id="email"
                     name="email"
                     placeholder="UserName"
-                    onChange={this.handleChange}
+                    onChange={(e) => this.handleChange(e.target.value)}
                     value={this.state.email}
                   />
-
+                  <ErrorMessage>{this.state.emailError}</ErrorMessage>
                   <input
                     name="password"
                     type="password"
-                    onChange={this.handleChange}
                     id="password"
                     placeholder="password"
-                    // onChange={this.handleChange}
+                    onChange={(e) => this.handleChangeclick(e.target.value)}
                     value={this.state.password}
                   />
+                  <ErrorMessage>{this.state.passwordError}</ErrorMessage>
                   <ErrorMessage>{this.state.loginError}</ErrorMessage>
                   <button onClick={this.login}>Login</button>
                   <button

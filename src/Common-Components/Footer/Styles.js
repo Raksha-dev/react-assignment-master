@@ -47,8 +47,6 @@ export const Button = styled.button `
     color: white;
     font-weight: bold;
     outline: none;
-   
-
 & i {
     font-size: 21px;
     position: absolute;
@@ -59,7 +57,6 @@ export const Button = styled.button `
       background-color: #fff;
     color: #333;
     }
-
 `
 export const Aboutus = styled.div`
   display: flex;

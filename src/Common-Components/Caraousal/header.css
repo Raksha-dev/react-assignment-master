@@ -48,6 +48,5 @@
 }
 
 .rec.rec-dot_active:hover {
-    /* background-color:rgb(255,255,255); */
     box-shadow: 0 0 1px 3px rgb(255, 255, 255);
 }

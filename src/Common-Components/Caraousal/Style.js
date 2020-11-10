@@ -86,9 +86,6 @@ export const CarouselContainer = styled.div`
   @media (min-width: 320px) and (max-width: 768px) {
     width: 100%;
     height: 20%;
-    /* button {
-      display: none;
-    } */
   }
 `;
 export const Carouselcontent = styled.div`

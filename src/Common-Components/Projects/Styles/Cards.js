@@ -38,7 +38,8 @@ export const Column = styled.div`
 `;
 export const CategoryButtons = styled.button`
   font-weight: 700;
-  background-color: transparent;
+  background: ${(props) => props.active == true ?  props.color : 'transparent' } ;
+  color: ${(props) => props.active == true ?  'white' : 'black' } ;
   border-radius: 30px;
   border: none;
   padding: 10px 20px;
@@ -47,22 +48,9 @@ export const CategoryButtons = styled.button`
   max-width: 1240px;
   :hover {
     background: ${(props) => props.color};
+    color: white;
   }
 `;
-export const CategoryButtonsall = styled.button`
-  font-weight: 700;
-  background-color: transparent;
-  border-radius: 30px;
-  border: none;
-  padding: 10px 20px;
-  outline: none;
-  margin: 0 auto;
-  max-width: 1240px;
-  :hover {
-    background: ${(props) => props.color};
-  }
-`;
-
 export const Row = styled.div`
   display: grid;
   grid-template-columns: repeat(4, auto);

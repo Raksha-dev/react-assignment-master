@@ -15,7 +15,6 @@ export const historyComponent = withRouter(({ history, location }) => {});
 class signup extends Component {
   constructor(props) {
     super(props);
-    // this.login = this.login.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.signup = this.signup.bind(this);
     this.state = {
@@ -23,53 +22,120 @@ class signup extends Component {
       email: "",
       password: "",
       confirmpassword: "",
+      emailError: "",
+      passwordError: "",
+      confirmPasswordError: "",
+      fullnameError: "",
       signupError: "",
     };
   }
-  ValidateEmail() {
-    let signupError = "";
-    if (!this.state.email.includes("@")) {
-      signupError = "Please Enter the valid user details";
-    }
-    if (signupError) {
-      this.setState({ signupError });
+  ValidateEmail(email) {
+    let emailError = "";
+    if (!email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g)) {
+      this.setState({ emailError: "Please Enter the valid username!" });
+      console.log("hy");
+      return true;
+    } else {
+      this.setState({ emailError: "" });
       return false;
     }
-    return true;
-    // var mailformat = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-    // if (inputText.match(mailformat)) {
-    //   return true;
-    // } else {
-    //   return false;
-    // }
+  }
+  ValidatePassword(password) {
+    let passwordError = "";
+    if (
+      !password.match(/(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+-]).{6}/)
+    ) {
+      this.setState({ passwordError: "Please Enter the valid password!" });
+      return true;
+    } else {
+      this.setState({ passwordError: "" });
+      return false;
+    }
+  }
+  ValidateconfirmPassword(confirmpassword) {
+    let confirmPasswordError = "";
+    if (
+      !confirmpassword.match(/(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+-]).{6}/)
+    ) {
+      this.setState({ confirmPasswordError: "Please enter a valid Confirm Password!" });
+      return true;
+    } else {
+      this.setState({ confirmPasswordError: "" });
+      return false;
+    }
+  }
+  ValidateFullname(fullname) {
+    let fullnameError = "";
+    if (
+      !fullname.match(/[a-zA-Z]/)
+    ) {
+      this.setState({ fullnameError: "Please Enter the valid name!" });
+      return true;
+    } else {
+      this.setState({ fullnameError: "" });
+      return false;
+    }
   }
   login(e) {
-    history.push("/");
+    history.push("/Login");
   }
   signup(e) {
     console.log("signing up....");
     e.preventDefault();
     const { location, history } = this.props;
-    const isValid = this.ValidateEmail();
-    // if(this.ValidateEmail(this.state.email)){
-    if (isValid) {
+    if (this.state.email == "" && this.state.password == "") {
+      this.setState({
+        signupError: "Please Enter the valid use details",
+      });
+    }
+    else {
       firebase
         .auth()
         .createUserWithEmailAndPassword(this.state.email, this.state.password)
         .then((u) => {
           console.log(u);
-          history.push("/Home");
+          setTimeout(() => {
+            history.push(`/Home`);
+          }, 2000);
         })
         .catch((err) => {
           console.log(err);
         });
     }
   }
-  handleChange(e) {
-    console.log(e);
+  handleChange(value) {
+    console.log(value);
     this.setState({
-      [e.target.name]: e.target.value,
+      email: value,
     });
+    this.ValidateEmail(value);
+    this.setState({ loginError: "" });
+  }
+
+  handleChangeclick(value) {
+    console.log(value);
+    this.setState({
+      password: value,
+    });
+    this.ValidatePassword(value);
+    this.setState({ loginError: "" });
+  }
+  handleChangefullname(value) {
+    this.setState({
+      fullname: value,
+    });
+    this.ValidateFullname(value);
+    this.setState({ loginError: "" });
+  }
+  handleConfirm(value) {
+    const { password, confirmpassword } = this.state;
+    if (password !== confirmpassword) {
+      this.setState({
+        confirmpassword: value,
+      });
+      this.ValidateconfirmPassword(value);
+      this.setState({ loginError: "" });
+  } 
   }
   render() {
     const { location, history } = this.props;
@@ -82,40 +148,42 @@ class signup extends Component {
               <Userlogin>
                 <form>
                   <input
-                    // type="fullname"
-                    // id="fullname"
-                    // name="fullname"
+                  name="fullname"
+                  type="fullname"
+                  id="fullname"
                     placeholder="FullName"
-                    onChange={this.handleChange}
-                    // value={this.state.fullname}
+                    onChange={(e) => this.handleChangefullname(e.target.value)}
+                    value={this.state.fullname}
                   />
+                  <ErrorMessage>{this.state.fullnameError}</ErrorMessage>
                   <input
                     name="email"
                     type="email"
-                    onChange={this.handleChange}
                     id="email"
                     placeholder="UserName"
-                    // onChange={this.handleChange}
+                    onChange={(e) => this.handleChange(e.target.value)}
                     value={this.state.email}
                   />
+                  <ErrorMessage>{this.state.emailError}</ErrorMessage>
                   <input
                     name="password"
                     type="password"
-                    onChange={this.handleChange}
                     id="password"
                     placeholder="password"
-                    // onChange={this.handleChange}
+                    onChange={(e) => this.handleChangeclick(e.target.value)}
                     value={this.state.password}
                   />
+                  <ErrorMessage>{this.state.passwordError}</ErrorMessage>
                   <input
                     name="confirmpassword"
                     type="confirmpassword"
-                    onChange={this.handleChange}
+                    // onChange={this.handleChange}
                     id="confirmpassword"
                     placeholder="Confirm Password"
-                    // onChange={this.handleChange}
-                    // value={this.state.password}
+                    onChange={(e) => this.handleConfirm(e.target.value)}
+                    value={this.state.confirmpassword}
                   />
+                  <ErrorMessage>{this.state.confirmPasswordError}</ErrorMessage>
                   <ErrorMessage>{this.state.signupError}</ErrorMessage>
                   <button onClick={this.signup}>Signup</button>
                   <button onClick={this.login}>Login</button>

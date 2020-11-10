@@ -310,7 +310,7 @@ export const Subdropdown = styled.ul`
 
 export const Responsivemenu = styled.div`
   display: none;
-  
+
   @media (min-width: 320px) and (max-width: 425px) {
     width: 50%;
     background-color: rgb(68, 178, 114) !important;
@@ -459,7 +459,7 @@ export const LogoutButton = styled.button`
   border-color: ${(props) => props.color};
   color: ${(props) => props.color};
   border-radius: 20px;
-    margin-top: -1px;
+  margin-top: -1px;
   :hover {
     color: #fff;
     background: ${(props) => props.color};

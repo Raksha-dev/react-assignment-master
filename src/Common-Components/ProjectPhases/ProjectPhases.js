@@ -42,9 +42,7 @@ class projectphase extends Component {
                         <h2>Project Closure</h2>
                         <p>Massa velit, id dapibus nunc efficitur at. Quisque elementum magna quis ante suscipit, quis.</p>
                     </PulseIcon>
-                    
                 </Phases>
-                
             </Projectphases>
         );
     }

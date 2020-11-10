@@ -10,15 +10,6 @@ export const Image = styled.div`
   width: 100%;
   height: 100vh;
   background-size: cover;
-  /* &::before{
-    content: "";
-    position: absolute;
-    background-color: rgb(48, 49, 51);
-    opacity: 0.9;
-    width: 100%;
-    height: 100%;
-    top: 0;
-  } */
 `;
 export const Imagebg = styled.div`
 
@@ -298,22 +289,7 @@ export const Grid = styled.div`
     padding-bottom: 30px;
   }
 `;
-export const Row = styled.div`
-  margin-left: -15px;
-  margin-right: -15px;
-  ::before {
-    content: " ";
-    display: table;
-  }
-  ::after {
-    clear: both;
-    content: " ";
-    display: table;
-  }
-`;
-export const Col = styled.div`
-  width: 50%;
-`;
+
 export const IconBoxOne = styled.div`
   margin: 10px 0;
   text-align: center;

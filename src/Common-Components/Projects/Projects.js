@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import history from "../../History/history";
 import Cards from "../../Common-Components/Projects";
 import {withRouter} from 'react-router';
 import Card from "./projectcard";
@@ -15,7 +14,8 @@ class Projects extends Component {
     this.state = {
       type: "PEOPLE",
       all: true,
-      activeButton: false
+      activeButton: false,
+      activestatus: "all"
     };
     this.handleClickPEOPLE = this.handleClickPEOPLE.bind(this);
     this.handleClickANIMALS = this.handleClickANIMALS.bind(this);
@@ -25,25 +25,27 @@ class Projects extends Component {
   handleClick() {
     this.setState((state) => ({
       all: true,
-      bgColor: "red"
+      activestatus: "all"
     }));
-    
   }
   handleClickPEOPLE() {
     this.setState((state) => ({
       type: "PEOPLE",
       all: false,
+      activestatus: "people"
     }));
   }
   handleClickANIMALS() {
     this.setState((state) => ({
       type: "ANIMALS",
       all: false,
+      activestatus: "animals"
     }));
   }
   handleClickOTHERS() {
     this.setState((state) => ({
       type: "OTHERS",
+      activestatus: "others"
     }));
   }
 
@@ -58,15 +60,15 @@ class Projects extends Component {
         <Allbuttons style={{ align: "center" }}>
           <div
           >
-            <CategoryButtonsall color={darkColor}
+            <CategoryButtons color={darkColor} active={this.state.activestatus == "all"}
+            onClick={this.handleClick}
             >
-              
               ALL
-            </CategoryButtonsall>
+            </CategoryButtons>
           </div>
           <div
           >
-            <CategoryButtons color={darkColor} 
+            <CategoryButtons color={darkColor} active={this.state.activestatus == "people"}
               onClick={this.handleClickPEOPLE}
             >
               PEOPLE
@@ -74,7 +76,7 @@ class Projects extends Component {
           </div>
           <div
           >
-            <CategoryButtons color={darkColor}
+            <CategoryButtons color={darkColor} active={this.state.activestatus == "animals"}
               onClick={this.handleClickANIMALS}
             >
               ANIMALS
@@ -82,7 +84,7 @@ class Projects extends Component {
           </div>
           <div
           >
-            <CategoryButtons color={darkColor}
+            <CategoryButtons color={darkColor} active={this.state.activestatus == "others"}
               onClick={this.handleClickOTHERS}
             >
               OTHERS

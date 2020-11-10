@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import firebase from "./firebase";
-import { Inputform } from "./Style";
-import {SubmitButton, ShowMessage } from "./Style";
+import {Inputform,SubmitButton, ShowMessage } from "./Style";
 import { ThemeContext } from "../../Common-Components/context/Theme";
 
 const Contact = (props) => {
@@ -10,10 +9,6 @@ const Contact = (props) => {
   const [subject, setsubject] = useState("");
   const [message, setmessage] = useState("");
   const [showMessage, setshowMessage] = useState("");
-
-  // useEffect(() => {
-  //     window.scrollTo(0, 0)
-  //   }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
